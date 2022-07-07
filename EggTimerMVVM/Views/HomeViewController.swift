@@ -10,7 +10,7 @@ import UIKit
 // MARK: - HomeViewController
 final class HomeViewController: UIViewController {
     
-    var viewModel: HomeViewModel! {
+    weak var viewModel: HomeViewModel! {
         didSet {
             viewModel.delegate = self
         }

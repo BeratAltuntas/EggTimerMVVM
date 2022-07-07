@@ -10,7 +10,7 @@ import UIKit
 // MARK: - EggDetailViewController
 final class EggDetailViewController: UIViewController {
     
-    var viewModel: EggDetailViewModel! {
+    weak var viewModel: EggDetailViewModel! {
         didSet {
             viewModel.delegate = self
         }
