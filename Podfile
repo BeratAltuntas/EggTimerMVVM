@@ -4,9 +4,9 @@
 target 'EggTimerMVVM' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
   # Pods for EggTimerMVVM
-
+  pod 'Hero'
+  
   target 'EggTimerMVVMTests' do
     inherit! :search_paths
     # Pods for testing

@@ -21,6 +21,9 @@
 		F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB622877444B005C1376 /* EggDetailViewController.swift */; };
 		F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6428774473005C1376 /* HomeViewModel.swift */; };
 		F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6628774485005C1376 /* EggDetailViewModel.swift */; };
+		F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */; };
+		F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */; };
+		F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */; };
 		FB1A6C42108166BEE4A41DBE /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B5BDC9A5719FE1EE750920 /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		F44CAB622877444B005C1376 /* EggDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewController.swift; sourceTree = "<group>"; };
 		F44CAB6428774473005C1376 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F44CAB6628774485005C1376 /* EggDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewModel.swift; sourceTree = "<group>"; };
+		F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Hero.swift"; sourceTree = "<group>"; };
+		F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
+		F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomImages.swift"; sourceTree = "<group>"; };
 		FB6B9DF4E1A21020FBCF0D8D /* Pods-EggTimerMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerMVVM.release.xcconfig"; path = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +113,6 @@
 				C02AE413910AE7449E8B6C0E /* Pods-EggTimerMVVMTests.debug.xcconfig */,
 				8D516B7612A174E59E24C419 /* Pods-EggTimerMVVMTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +151,7 @@
 		F44CAB2A2877426D005C1376 /* EggTimerMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				F48CF41E28774FC3001E7FD6 /* Extensions */,
 				F44CAB5F28774340005C1376 /* Storyboards */,
 				F44CAB5E2877431B005C1376 /* Views */,
 				F44CAB5D287742A1005C1376 /* ViewModels */,
@@ -217,6 +223,16 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		F48CF41E28774FC3001E7FD6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */,
+				F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */,
+				F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +244,7 @@
 				F44CAB242877426D005C1376 /* Sources */,
 				F44CAB252877426D005C1376 /* Frameworks */,
 				F44CAB262877426D005C1376 /* Resources */,
+				DDE2F8579B9F3D38C9D35EEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +282,7 @@
 				F44CAB4428774272005C1376 /* Sources */,
 				F44CAB4528774272005C1376 /* Frameworks */,
 				F44CAB4628774272005C1376 /* Resources */,
+				A3E28AFAF483CEA11B5DDB32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,6 +431,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A3E28AFAF483CEA11B5DDB32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDE2F8579B9F3D38C9D35EEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -422,9 +474,12 @@
 			files = (
 				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
 				F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */,
+				F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */,
 				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
 				F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */,
+				F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */,
 				F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */,
+				F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */,
 				F44CAB612877442D005C1376 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

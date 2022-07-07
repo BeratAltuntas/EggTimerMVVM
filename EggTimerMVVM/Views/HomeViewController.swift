@@ -18,6 +18,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.SetupUI()
     }
     
     
@@ -25,5 +26,7 @@ final class HomeViewController: UIViewController {
 
 // MARK: - Extension: HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
-    
+    func LoadUI() {
+        
+    }
 }

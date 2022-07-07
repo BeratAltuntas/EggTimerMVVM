@@ -10,11 +10,12 @@ import Foundation
 // MARK: - HomeViewModelProtocol
 protocol HomeViewModelProtocol {
     var delegate: HomeViewModelDelegate? { get set }
+    func SetupUI()
 }
 
 // MARK: - HomeViewModelDelegate
 protocol HomeViewModelDelegate: AnyObject {
-    
+    func LoadUI()
 }
 
 // MARK: - HomeViewModel
@@ -24,5 +25,7 @@ final class HomeViewModel {
 
 // MARK: - Extension: HomeViewModelProtocol
 extension HomeViewModel: HomeViewModelProtocol {
-    
+    func SetupUI() {
+        delegate?.LoadUI()
+    }
 }

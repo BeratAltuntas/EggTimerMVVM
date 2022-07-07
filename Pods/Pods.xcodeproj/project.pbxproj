@@ -7,57 +7,190 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28D51B041548F8998B07A0BEEDC378CF /* Pods-EggTimerMVVMTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E55A992717348D9A87D427C31A84AF /* Pods-EggTimerMVVMTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		471134EA0FDEE48B676158BF3CE90CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		64C63ED29DAD67BFB9138FFEB577FA20 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC32912E17024C0468D1AECBEC6F8BD /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A72A198AF9C8D18A091153C4055554D2 /* Pods-EggTimerMVVM-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD88CF0F18F04C15DE267A125A18D2C /* Pods-EggTimerMVVM-dummy.m */; };
-		B0A043D024924D66BE3653AC1FE648E4 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 639AE76F08ED8D00B465CDBD38374A4D /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */; };
-		B1656F2D6D323CF00B08FF7727AED9B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		BE84C874F16217E4E57E96F935AA2290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C911B4FAFA8C8B2B6B58183AB9D1E7F9 /* Pods-EggTimerMVVM-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A15C48FC8A9892B9779E5C75C48B162D /* Pods-EggTimerMVVM-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F621B0E957F1E9CBFF7C7CF3AFCA35BE /* Pods-EggTimerMVVMTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF6EA7E7598841CD2B05882531566A /* Pods-EggTimerMVVMTests-dummy.m */; };
+		0153415516ADD1D706B173597E8D15DE /* CAMediaTimingFunction+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC77C49D2AD96C19F55BAA2870E24F80 /* CAMediaTimingFunction+Hero.swift */; };
+		03494FEF50DC7E3256E1D508D51458CC /* Hero-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2152E389D390484545054D8C7104DC0 /* Hero-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14F874BF94A20C6784C5ED78061DFDF4 /* HeroTransition+CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5356DD4A9860261C41AD432AD71EC /* HeroTransition+CustomTransition.swift */; };
+		151482556525CEF81110CC0A9CA9E1E0 /* HeroDefaultAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9665A10CAE0DCE2B5D79D7BB25D3E28D /* HeroDefaultAnimator.swift */; };
+		22CEEBC7570EB19BD931797B0D740C89 /* HeroTransition+Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186210D9BF5D4F03245C2C55ED22B1BA /* HeroTransition+Start.swift */; };
+		239C0A6B4FACB1A42ADFC078BCB90300 /* HeroTransition+UITabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680036E020247BA9E24A4771E27926A /* HeroTransition+UITabBarControllerDelegate.swift */; };
+		24580BEC54DF3EB1A69034AB26B5E684 /* HeroModifier+HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD919A10138BB7DF8B46DC24C6AF4C /* HeroModifier+HeroStringConvertible.swift */; };
+		27355974072F5545C30CDA294506D62C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */; };
+		28D51B041548F8998B07A0BEEDC378CF /* Pods-EggTimerMVVMTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA377E59E0F348E6AFD0ABDDCE42307 /* Pods-EggTimerMVVMTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		290CD7347996289C96A27A90A8372410 /* CG+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA6F09A39D853C7D46A819A8F355004 /* CG+Hero.swift */; };
+		2F1E6A6C4948882F43A6665788765278 /* MatchPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E153695A56A15F4D097768AC4953F90 /* MatchPreprocessor.swift */; };
+		306FF02477BFE1D4104A4EAAD5A35F3C /* HeroViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC876CA818409A56658030F26FA0F37 /* HeroViewControllerDelegate.swift */; };
+		34F20820D5F3E08CA3C6BE59E554BADF /* HeroDebugPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E09680BEECB6ED359E52FFF2610B78 /* HeroDebugPlugin.swift */; };
+		36B3BF9B3AA60BCA8BA0D1C8869505D7 /* HeroModifier+Advanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F9682901DAB850956CF6760D51AE5C /* HeroModifier+Advanced.swift */; };
+		3BD418D01ECA25B9748E4B5B91EA2180 /* HeroTransition+Interactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3830F2F563F4B3440BC1C820CA23FD6B /* HeroTransition+Interactive.swift */; };
+		44A38244208CA2DAA5FE9821063C73EF /* Pods-EggTimerMVVM-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AC2C541E81D279ADA960CB3D23338E3 /* Pods-EggTimerMVVM-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C4CA750821B7AB5D77382FA15318259 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AE4626839002E8F0CA7DEB0351C19C /* UIColor+HexString.swift */; };
+		511AABB21EDDB45BCC57C54B2C7E470C /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F185F4E7F0FDC90E68076189130090B0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		578F108DF10B7DEA593F4EB4DF8D79BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		5D6A6933FF63F86D2B8C7534315D484C /* HeroCoreAnimationViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE80B5B7CEE8CC6AC954AF9EDC87006 /* HeroCoreAnimationViewContext.swift */; };
+		682B06B34DE7400B60ECABB01FF8BF72 /* Pods-EggTimerMVVM-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AA12A076E8DE87C55815CD27BDFF9D /* Pods-EggTimerMVVM-dummy.m */; };
+		6C9C33E5CF926D0E3BAA5E89A003A2F1 /* HeroTransition+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764769E1A70CA77E6C545B4CDC2008AB /* HeroTransition+Animate.swift */; };
+		71438073BBD2C6C1D77748E56D6C0F9B /* HeroProgressRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116E6E8E9A43FE8169F0AB432EA6EA2A /* HeroProgressRunner.swift */; };
+		72CEB6C018ED66F705CE583804121DF9 /* Locale+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9AC7CD2302F653813CA03B020885A /* Locale+Hero.swift */; };
+		7987894C6A2A1420E9AC7ABBD01A1F3C /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DA2005223340EA938B82E9D6D30577 /* HeroTransition+UIViewControllerTransitioningDelegate.swift */; };
+		7CC0BDDB81459D55B547C953AF175148 /* Hero-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5226DC848D5183910F0BDCA44369141 /* Hero-dummy.m */; };
+		7E3B00774A4B94D728A983A67CE45669 /* CascadePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DEF8139E6EEB34AB7105D9FF038093 /* CascadePreprocessor.swift */; };
+		7E8E54FF0A03B7BADEBF22C10AF9ABB1 /* HeroDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D47C8468E53A8F88B7A986211CA6E71 /* HeroDebugView.swift */; };
+		84D2F28E4B4CBEB043380B30CBE3EAD9 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C7148DF5C628FA9BF9B8433BB75E2A /* SwiftSupport.swift */; };
+		8E011223B84081D7759DDD9D86113C72 /* HeroTransition+Complete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2128481F016D24960B5FEC0A58A3D /* HeroTransition+Complete.swift */; };
+		945B9DBBE9F52087055A2A844976A4D8 /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD825FAE02BA8F3E0E1048212123F84 /* Nodes.swift */; };
+		94611C229D3F5539A011373D00693D82 /* DispatchQueue+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF328D6DFA4B2DE9F33AB7FE01D17F29 /* DispatchQueue+Hero.swift */; };
+		95CD2FB157934A9AF9553A6DD32EE76B /* DefaultAnimationPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3306329C70EB2E72F03CB684F03FDB /* DefaultAnimationPreprocessor.swift */; };
+		A0B0D60C0789D86925FBD22DB9E9F76A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ECBBAAC9537D15751EA8392C3E4BE1 /* Parser.swift */; };
+		A1CE141B1C185FB73E7EDF61A2A6E42F /* HeroTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E90B1DB9022318D2C8F4C4843FCA50 /* HeroTypes.swift */; };
+		A7DB847A513187E25ED1F299E10EF9C4 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D35608583606E2C3EC7B5BD6B7F49A /* HeroTransition+UINavigationControllerDelegate.swift */; };
+		ABC06AC2D319CE550CDB3C31CD23F759 /* HeroTargetState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5A718D416633B5A0C5B0ED765CBE /* HeroTargetState.swift */; };
+		AE311AF2F53F908249E96319F3688927 /* HeroStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D06718F811147D609B08ED9CFD510C /* HeroStringConvertible.swift */; };
+		B1883A0E868F7E4D81930F39C0E5B1DC /* HeroTransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA26414D900F70A1F10E39BCB349066E /* HeroTransitionState.swift */; };
+		B2EBF95201D83BC67D78908661CF0094 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		B58F2A64CB7DE3D0A6D0BCD6B1D0085F /* SourcePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A640DAA292A8E3E1D3C34F25C2D716D1 /* SourcePreprocessor.swift */; };
+		B6AA345C6C1AD7C15E59CA69355FEACB /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6849B6FFBB657FCFF41ED5958D3738 /* Lexer.swift */; };
+		BCE9E4B20B27631B7AA3B0CC6CB0E6B4 /* CALayer+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D76D27E27C94F70433CB61319E522 /* CALayer+Hero.swift */; };
+		BE84C874F16217E4E57E96F935AA2290 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		C09CE221D9FB8CFFAD7132853DDB7AF2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */; };
+		C56A5F0000597F6706F6AFBBEE77FA6E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0A41AD81D11D32D1A93BA9941A90BA /* Regex.swift */; };
+		CB0AC15AA50B46C4B84FD40F2229F8C4 /* HeroPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EC6EEA8C33868F412BFB72C661B7D2 /* HeroPlugin.swift */; };
+		CD203F1B89EAE6EB96A1D3FDB5082D2B /* BasePreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3473B500A32B2D92091550F5E56ABC69 /* BasePreprocessor.swift */; };
+		CFB856AA712DF68446678D39DCD0EB71 /* HeroTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4E394EF34240B2953C1C891CD9F749 /* HeroTransition.swift */; };
+		D2167C7CA3BAEFCECA853BBB3F7D88DD /* ConditionalPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570E5FC120761D15568C1A9A9B5B4BC /* ConditionalPreprocessor.swift */; };
+		D286BC2C12C3C097ED2C5115C9AC772C /* HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A480F126B86721A37CB18A7FD18F5BBB /* HeroModifier.swift */; };
+		D4A3622FDF5C0940F36D2239B74F2077 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */; };
+		D7278C7E94DC131BD1610F43076819BD /* HeroContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EDEAD4FFB8214A9B00C211BFBC2406 /* HeroContext.swift */; };
+		D77A44871E466FE472DD738E43711B01 /* HeroAnimatorViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDC2F69E59F699D818484A748E62994 /* HeroAnimatorViewContext.swift */; };
+		D851519470641B81AE42885C8949EE71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */; };
+		D85EF87FE963C92FF9D30B0A79CB2625 /* UIKit+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCF826C4044A6E5855BDB45B97FD6C4 /* UIKit+Hero.swift */; };
+		DDBDEC8B10A675FDF6CC2ADB3688BCBC /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22548C8148EA2FF04FCAD08CB27BAA72 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */; };
+		E62691FC18B7E41760F2EC4B3FDCB259 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */; };
+		E724F3BB81DD7C9E512A22072DE751B4 /* HeroViewPropertyViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C5CF3EB3F62A2CAFABA0D8E8D9EC8 /* HeroViewPropertyViewContext.swift */; };
+		EB00CE07C32B67FE1E78BE0875CFA875 /* HeroCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D77B7B5CE088BAC091D137C899585C2 /* HeroCompatible.swift */; };
+		F1A085326179C7F156053D6BF35B620B /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CE419183725F5151D21BD4D69F8EE /* UIViewController+Hero.swift */; };
+		F621B0E957F1E9CBFF7C7CF3AFCA35BE /* Pods-EggTimerMVVMTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 172B319CE81416A85C2EBE83673E5F70 /* Pods-EggTimerMVVMTests-dummy.m */; };
+		FB5225F3940E5186566D5BDD47C30BD1 /* Array+HeroModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E6988AFF104DE0A5B70B19568DD5C /* Array+HeroModifier.swift */; };
+		FCA8E9B6166E2349ADF7D4A53C1E904E /* UIView+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936E3CE1667824D9A38E0C7F204D490C /* UIView+Hero.swift */; };
+		FE6F1C6D1A1C224FD5EED4FAFFB19480 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8FC9278B90A29B72AEE6B2C26C08A /* IgnoreSubviewModifiersPreprocessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DBD4FFE83C953407E7EB17FFE6427085 /* PBXContainerItemProxy */ = {
+		D6D106F2C094C35AE229ACB9C29651A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3893AEA4D7DBB9A086E889FC469132D;
+			remoteInfo = Hero;
+		};
+		EDCD05B005C478E3FCD61669E7C5C771 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BD5F0BCAD238C0CC47BDC084CE930ADD;
 			remoteInfo = "Pods-EggTimerMVVM";
 		};
+		F35C64263C558A7682D2CD272F58A4D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3893AEA4D7DBB9A086E889FC469132D;
+			remoteInfo = Hero;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11265B0121C82D336876A878E52978E3 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		23CBB877A4FFEE63EE0390510F51BC3C /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2BEA021FD6772D092F97D33EB24FBD54 /* Pods-EggTimerMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM.release.xcconfig"; sourceTree = "<group>"; };
-		2F23764C1977FF09589D68931965E6C3 /* Pods-EggTimerMVVM-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-acknowledgements.plist"; sourceTree = "<group>"; };
-		4B4FEB8444F3DDC6594C8D297EBB2D53 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4E95FFF0B7F408BFE260D9F1C7C5F86C /* Pods-EggTimerMVVMTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVMTests.modulemap"; sourceTree = "<group>"; };
-		5A511BD9B2C1FE631CFF40AE6F5BF6F2 /* Pods-EggTimerMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5C4496F93CB0F1CDD81AB3A65D2839EF /* Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap"; sourceTree = "<group>"; };
-		619235A46392008D1E512C76CE1519E7 /* Pods-EggTimerMVVM-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-Info.plist"; sourceTree = "<group>"; };
-		639AE76F08ED8D00B465CDBD38374A4D /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m"; sourceTree = "<group>"; };
-		6ADF6EA7E7598841CD2B05882531566A /* Pods-EggTimerMVVMTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVMTests-dummy.m"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7404DC8434DC12D2DC0E15D3245824A1 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist"; sourceTree = "<group>"; };
-		8E374C457C69A58DC2BED9A5A4D26295 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0B87AC365247A4A2678DB5499E4D1D53 /* Hero.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hero.modulemap; sourceTree = "<group>"; };
+		116E6E8E9A43FE8169F0AB432EA6EA2A /* HeroProgressRunner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroProgressRunner.swift; path = Sources/Transition/HeroProgressRunner.swift; sourceTree = "<group>"; };
+		13C5D261F9DA23DF8437D36572C8BE28 /* Pods-EggTimerMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1680036E020247BA9E24A4771E27926A /* HeroTransition+UITabBarControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UITabBarControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UITabBarControllerDelegate.swift"; sourceTree = "<group>"; };
+		172B319CE81416A85C2EBE83673E5F70 /* Pods-EggTimerMVVMTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVMTests-dummy.m"; sourceTree = "<group>"; };
+		186210D9BF5D4F03245C2C55ED22B1BA /* HeroTransition+Start.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Start.swift"; path = "Sources/Transition/HeroTransition+Start.swift"; sourceTree = "<group>"; };
+		1D39E5051CF7E88A1677161EFFE69249 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1F4E394EF34240B2953C1C891CD9F749 /* HeroTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransition.swift; path = Sources/Transition/HeroTransition.swift; sourceTree = "<group>"; };
+		22548C8148EA2FF04FCAD08CB27BAA72 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m"; sourceTree = "<group>"; };
+		25EDEAD4FFB8214A9B00C211BFBC2406 /* HeroContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroContext.swift; path = Sources/HeroContext.swift; sourceTree = "<group>"; };
+		261EC014CDDEC4169D53A3A2CA9B06CC /* Pods-EggTimerMVVMTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVMTests.modulemap"; sourceTree = "<group>"; };
+		26AA12A076E8DE87C55815CD27BDFF9D /* Pods-EggTimerMVVM-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVM-dummy.m"; sourceTree = "<group>"; };
+		28FD919A10138BB7DF8B46DC24C6AF4C /* HeroModifier+HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+HeroStringConvertible.swift"; path = "Sources/HeroModifier+HeroStringConvertible.swift"; sourceTree = "<group>"; };
+		29D35608583606E2C3EC7B5BD6B7F49A /* HeroTransition+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UINavigationControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
+		2D47C8468E53A8F88B7A986211CA6E71 /* HeroDebugView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugView.swift; path = "Sources/Debug Plugin/HeroDebugView.swift"; sourceTree = "<group>"; };
+		3473B500A32B2D92091550F5E56ABC69 /* BasePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BasePreprocessor.swift; path = Sources/Preprocessors/BasePreprocessor.swift; sourceTree = "<group>"; };
+		3830F2F563F4B3440BC1C820CA23FD6B /* HeroTransition+Interactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Interactive.swift"; path = "Sources/Transition/HeroTransition+Interactive.swift"; sourceTree = "<group>"; };
+		3B2F4F35FE0A79D207ED2ACF1D77ED29 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks.sh"; sourceTree = "<group>"; };
+		3CD825FAE02BA8F3E0E1048212123F84 /* Nodes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nodes.swift; path = Sources/Parser/Nodes.swift; sourceTree = "<group>"; };
+		3CEFBCB34E20FE2EC0556179F7939941 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		40BB5A718D416633B5A0C5B0ED765CBE /* HeroTargetState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTargetState.swift; path = Sources/HeroTargetState.swift; sourceTree = "<group>"; };
+		42AE4626839002E8F0CA7DEB0351C19C /* UIColor+HexString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+HexString.swift"; path = "Sources/Extensions/UIColor+HexString.swift"; sourceTree = "<group>"; };
+		43D06718F811147D609B08ED9CFD510C /* HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroStringConvertible.swift; path = Sources/Parser/HeroStringConvertible.swift; sourceTree = "<group>"; };
+		44E09680BEECB6ED359E52FFF2610B78 /* HeroDebugPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugPlugin.swift; path = "Sources/Debug Plugin/HeroDebugPlugin.swift"; sourceTree = "<group>"; };
+		44EB696AEF37B1D48A8CCC7846E580F5 /* Hero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hero.release.xcconfig; sourceTree = "<group>"; };
+		47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		495E6988AFF104DE0A5B70B19568DD5C /* Array+HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+HeroModifier.swift"; path = "Sources/Extensions/Array+HeroModifier.swift"; sourceTree = "<group>"; };
+		514DF68E83E93E6FD071D4C60DB2845A /* Hero-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Hero-Info.plist"; sourceTree = "<group>"; };
+		53BDD5DDFED9E6E64D27CFFFB58ED656 /* Pods-EggTimerMVVM-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVM-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5AC2C541E81D279ADA960CB3D23338E3 /* Pods-EggTimerMVVM-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVM-umbrella.h"; sourceTree = "<group>"; };
+		5E153695A56A15F4D097768AC4953F90 /* MatchPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchPreprocessor.swift; path = Sources/Preprocessors/MatchPreprocessor.swift; sourceTree = "<group>"; };
+		5FE9AC7CD2302F653813CA03B020885A /* Locale+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Locale+Hero.swift"; path = "Sources/Extensions/Locale+Hero.swift"; sourceTree = "<group>"; };
+		6BA6F09A39D853C7D46A819A8F355004 /* CG+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CG+Hero.swift"; path = "Sources/Extensions/CG+Hero.swift"; sourceTree = "<group>"; };
+		6BE80B5B7CEE8CC6AC954AF9EDC87006 /* HeroCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCoreAnimationViewContext.swift; path = Sources/Animator/HeroCoreAnimationViewContext.swift; sourceTree = "<group>"; };
+		6C5BD92742E09DBDBD910FB9126C9510 /* Pods-EggTimerMVVM-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-acknowledgements.plist"; sourceTree = "<group>"; };
+		6C7A23CB7387A8BD8BBBA2349032414E /* Hero-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-prefix.pch"; sourceTree = "<group>"; };
+		6EA377E59E0F348E6AFD0ABDDCE42307 /* Pods-EggTimerMVVMTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVMTests-umbrella.h"; sourceTree = "<group>"; };
+		6F6849B6FFBB657FCFF41ED5958D3738 /* Lexer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Lexer.swift; path = Sources/Parser/Lexer.swift; sourceTree = "<group>"; };
+		75B8FC9278B90A29B72AEE6B2C26C08A /* IgnoreSubviewModifiersPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IgnoreSubviewModifiersPreprocessor.swift; path = Sources/Preprocessors/IgnoreSubviewModifiersPreprocessor.swift; sourceTree = "<group>"; };
+		764769E1A70CA77E6C545B4CDC2008AB /* HeroTransition+Animate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Animate.swift"; path = "Sources/Transition/HeroTransition+Animate.swift"; sourceTree = "<group>"; };
+		7A2663D9DA9BD922801AB42FFB0832D9 /* Pods-EggTimerMVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVMTests.release.xcconfig"; sourceTree = "<group>"; };
+		7CC876CA818409A56658030F26FA0F37 /* HeroViewControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroViewControllerDelegate.swift; path = Sources/HeroViewControllerDelegate.swift; sourceTree = "<group>"; };
+		7FDC2F69E59F699D818484A748E62994 /* HeroAnimatorViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroAnimatorViewContext.swift; path = Sources/Animator/HeroAnimatorViewContext.swift; sourceTree = "<group>"; };
+		80CBFBD876B3A6676DAE64BF4390376D /* Pods-EggTimerMVVM.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVM.modulemap"; sourceTree = "<group>"; };
+		839CE419183725F5151D21BD4D69F8EE /* UIViewController+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Hero.swift"; path = "Sources/Extensions/UIViewController+Hero.swift"; sourceTree = "<group>"; };
+		871666C9D9C9220A70D44F5C4E2B923A /* Pods-EggTimerMVVM-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-Info.plist"; sourceTree = "<group>"; };
+		8A3306329C70EB2E72F03CB684F03FDB /* DefaultAnimationPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAnimationPreprocessor.swift; path = Sources/Preprocessors/DefaultAnimationPreprocessor.swift; sourceTree = "<group>"; };
+		8E5F63E42D4AABD17FF116D5867F11F7 /* Pods-EggTimerMVVMTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVMTests-Info.plist"; sourceTree = "<group>"; };
+		907E692C2BCAC22616D18FE605921B04 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap"; sourceTree = "<group>"; };
+		92DA2005223340EA938B82E9D6D30577 /* HeroTransition+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UIViewControllerTransitioningDelegate.swift"; path = "Sources/Transition/HeroTransition+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
+		936E3CE1667824D9A38E0C7F204D490C /* UIView+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Hero.swift"; path = "Sources/Extensions/UIView+Hero.swift"; sourceTree = "<group>"; };
+		95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		964AD9F070707D5ACBF6AB418B146BEE /* Pods-EggTimerMVVM */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-EggTimerMVVM"; path = Pods_EggTimerMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A15C48FC8A9892B9779E5C75C48B162D /* Pods-EggTimerMVVM-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVM-umbrella.h"; sourceTree = "<group>"; };
-		A26D1E34E88B044600712973DC13D661 /* Pods-EggTimerMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM.debug.xcconfig"; sourceTree = "<group>"; };
-		A5058C74F2958699D44D61429A1F6635 /* Pods-EggTimerMVVMTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVMTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9665A10CAE0DCE2B5D79D7BB25D3E28D /* HeroDefaultAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDefaultAnimator.swift; path = Sources/Animator/HeroDefaultAnimator.swift; sourceTree = "<group>"; };
+		9D77B7B5CE088BAC091D137C899585C2 /* HeroCompatible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCompatible.swift; path = Sources/HeroCompatible.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF2128481F016D24960B5FEC0A58A3D /* HeroTransition+Complete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Complete.swift"; path = "Sources/Transition/HeroTransition+Complete.swift"; sourceTree = "<group>"; };
+		9FCF826C4044A6E5855BDB45B97FD6C4 /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
+		A3E90B1DB9022318D2C8F4C4843FCA50 /* HeroTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTypes.swift; path = Sources/HeroTypes.swift; sourceTree = "<group>"; };
+		A480F126B86721A37CB18A7FD18F5BBB /* HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroModifier.swift; path = Sources/HeroModifier.swift; sourceTree = "<group>"; };
+		A640DAA292A8E3E1D3C34F25C2D716D1 /* SourcePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourcePreprocessor.swift; path = Sources/Preprocessors/SourcePreprocessor.swift; sourceTree = "<group>"; };
+		A6EC6EEA8C33868F412BFB72C661B7D2 /* HeroPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroPlugin.swift; path = Sources/HeroPlugin.swift; sourceTree = "<group>"; };
+		AA26414D900F70A1F10E39BCB349066E /* HeroTransitionState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransitionState.swift; path = Sources/Transition/HeroTransitionState.swift; sourceTree = "<group>"; };
 		AB1F1EF7D475C6ED33076C7AE44EC376 /* Pods-EggTimerMVVMTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-EggTimerMVVMTests"; path = Pods_EggTimerMVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB5F88C38C7D7CC39EB9EEF906FA2563 /* Pods-EggTimerMVVMTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVMTests-Info.plist"; sourceTree = "<group>"; };
-		AE8CDCB931FC0160C90772E5BA56F732 /* Pods-EggTimerMVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVMTests.release.xcconfig"; sourceTree = "<group>"; };
-		B9E55A992717348D9A87D427C31A84AF /* Pods-EggTimerMVVMTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVMTests-umbrella.h"; sourceTree = "<group>"; };
-		BDD88CF0F18F04C15DE267A125A18D2C /* Pods-EggTimerMVVM-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EggTimerMVVM-dummy.m"; sourceTree = "<group>"; };
-		C121C223FBB4AAAA985CD46B382674C1 /* Pods-EggTimerMVVM-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVM-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AC77C49D2AD96C19F55BAA2870E24F80 /* CAMediaTimingFunction+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Hero.swift"; path = "Sources/Extensions/CAMediaTimingFunction+Hero.swift"; sourceTree = "<group>"; };
+		AF328D6DFA4B2DE9F33AB7FE01D17F29 /* DispatchQueue+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Hero.swift"; path = "Sources/Extensions/DispatchQueue+Hero.swift"; sourceTree = "<group>"; };
+		B21D76D27E27C94F70433CB61319E522 /* CALayer+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Hero.swift"; path = "Sources/Extensions/CALayer+Hero.swift"; sourceTree = "<group>"; };
+		B2F5356DD4A9860261C41AD432AD71EC /* HeroTransition+CustomTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+CustomTransition.swift"; path = "Sources/Transition/HeroTransition+CustomTransition.swift"; sourceTree = "<group>"; };
+		B570E5FC120761D15568C1A9A9B5B4BC /* ConditionalPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConditionalPreprocessor.swift; path = Sources/Preprocessors/ConditionalPreprocessor.swift; sourceTree = "<group>"; };
+		C0C7148DF5C628FA9BF9B8433BB75E2A /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = Sources/SwiftSupport.swift; sourceTree = "<group>"; };
+		C2152E389D390484545054D8C7104DC0 /* Hero-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-umbrella.h"; sourceTree = "<group>"; };
+		C2F9682901DAB850956CF6760D51AE5C /* HeroModifier+Advanced.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroModifier+Advanced.swift"; path = "Sources/HeroModifier+Advanced.swift"; sourceTree = "<group>"; };
+		C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		C7ECBBAAC9537D15751EA8392C3E4BE1 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser/Parser.swift; sourceTree = "<group>"; };
+		CA74CE1684AA066442F8B0AF8D80148B /* Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist"; sourceTree = "<group>"; };
+		CE0AD98AD80B8A6510D4EEC16EF67543 /* Pods-EggTimerMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1D608CC553A265F095DD435564AE0A9 /* Hero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hero.debug.xcconfig; sourceTree = "<group>"; };
+		D2DEF8139E6EEB34AB7105D9FF038093 /* CascadePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CascadePreprocessor.swift; path = Sources/Preprocessors/CascadePreprocessor.swift; sourceTree = "<group>"; };
+		D437E8E602D658A003A6D5C3E36CB3C0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		D51C5CF3EB3F62A2CAFABA0D8E8D9EC8 /* HeroViewPropertyViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroViewPropertyViewContext.swift; path = Sources/Animator/HeroViewPropertyViewContext.swift; sourceTree = "<group>"; };
+		D5226DC848D5183910F0BDCA44369141 /* Hero-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hero-dummy.m"; sourceTree = "<group>"; };
+		DB97BCB8CD2E73C418E378D84285C7F4 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DFB5990294110A8292D8BCFD9FB5105E /* Pods-EggTimerMVVM-EggTimerMVVMUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-EggTimerMVVM-EggTimerMVVMUITests"; path = Pods_EggTimerMVVM_EggTimerMVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E721F1DAF31420478FD86AFF5A2FB8BA /* Pods-EggTimerMVVM.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EggTimerMVVM.modulemap"; sourceTree = "<group>"; };
-		EB717F9C01F0F7AA952D10994E232E7D /* Pods-EggTimerMVVMTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVMTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		EDC32912E17024C0468D1AECBEC6F8BD /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h"; sourceTree = "<group>"; };
+		ECF8B6AEA6F8D52DB4A47B55528538DE /* Pods-EggTimerMVVMTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EggTimerMVVMTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		EF15C99C81D6843210FA9A37718D2B49 /* Pods-EggTimerMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EggTimerMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		F185F4E7F0FDC90E68076189130090B0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h"; sourceTree = "<group>"; };
+		F7015E3D68F1D9A24655ADC7DFD39BC5 /* Pods-EggTimerMVVMTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EggTimerMVVMTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FBCE0B3B6910A0F604AC2BA9CF401D02 /* Pods-EggTimerMVVM-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EggTimerMVVM-frameworks.sh"; sourceTree = "<group>"; };
+		FD0A41AD81D11D32D1A93BA9941A90BA /* Regex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Regex.swift; path = Sources/Parser/Regex.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,76 +202,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		928A469FF374D22642B9F5E38003B5E8 /* Frameworks */ = {
+		54F7E19270697682C110C60D70144419 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				471134EA0FDEE48B676158BF3CE90CFA /* Foundation.framework in Frameworks */,
+				B2EBF95201D83BC67D78908661CF0094 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEDF3BB540A437BB94DAAD54EEC26CC5 /* Frameworks */ = {
+		60B172CCA7AF67E6261B20C3AA42AF0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1656F2D6D323CF00B08FF7727AED9B7 /* Foundation.framework in Frameworks */,
+				D851519470641B81AE42885C8949EE71 /* CoreGraphics.framework in Frameworks */,
+				E62691FC18B7E41760F2EC4B3FDCB259 /* CoreMedia.framework in Frameworks */,
+				D4A3622FDF5C0940F36D2239B74F2077 /* Foundation.framework in Frameworks */,
+				C09CE221D9FB8CFFAD7132853DDB7AF2 /* QuartzCore.framework in Frameworks */,
+				27355974072F5545C30CDA294506D62C /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		856EC3D22CB97E95DC568D9C439BBC93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				578F108DF10B7DEA593F4EB4DF8D79BE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084D127E2062C6600B981B7D20A88D49 /* Pods-EggTimerMVVMTests */ = {
+		0A33CE89DD202ED6920C8DF39AF17425 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E95FFF0B7F408BFE260D9F1C7C5F86C /* Pods-EggTimerMVVMTests.modulemap */,
-				A5058C74F2958699D44D61429A1F6635 /* Pods-EggTimerMVVMTests-acknowledgements.markdown */,
-				EB717F9C01F0F7AA952D10994E232E7D /* Pods-EggTimerMVVMTests-acknowledgements.plist */,
-				6ADF6EA7E7598841CD2B05882531566A /* Pods-EggTimerMVVMTests-dummy.m */,
-				AB5F88C38C7D7CC39EB9EEF906FA2563 /* Pods-EggTimerMVVMTests-Info.plist */,
-				B9E55A992717348D9A87D427C31A84AF /* Pods-EggTimerMVVMTests-umbrella.h */,
-				5A511BD9B2C1FE631CFF40AE6F5BF6F2 /* Pods-EggTimerMVVMTests.debug.xcconfig */,
-				AE8CDCB931FC0160C90772E5BA56F732 /* Pods-EggTimerMVVMTests.release.xcconfig */,
-			);
-			name = "Pods-EggTimerMVVMTests";
-			path = "Target Support Files/Pods-EggTimerMVVMTests";
-			sourceTree = "<group>";
-		};
-		1A70E73E65EAC5D79E2FFC746EC7E2C0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5C4496F93CB0F1CDD81AB3A65D2839EF /* Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap */,
-				23CBB877A4FFEE63EE0390510F51BC3C /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown */,
-				8E374C457C69A58DC2BED9A5A4D26295 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist */,
-				639AE76F08ED8D00B465CDBD38374A4D /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */,
-				7404DC8434DC12D2DC0E15D3245824A1 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist */,
-				EDC32912E17024C0468D1AECBEC6F8BD /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */,
-				11265B0121C82D336876A878E52978E3 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */,
-				4B4FEB8444F3DDC6594C8D297EBB2D53 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */,
-			);
-			name = "Pods-EggTimerMVVM-EggTimerMVVMUITests";
-			path = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests";
-			sourceTree = "<group>";
-		};
-		285C52227CD675239C0F52B818EC2529 /* Pods-EggTimerMVVM */ = {
-			isa = PBXGroup;
-			children = (
-				E721F1DAF31420478FD86AFF5A2FB8BA /* Pods-EggTimerMVVM.modulemap */,
-				C121C223FBB4AAAA985CD46B382674C1 /* Pods-EggTimerMVVM-acknowledgements.markdown */,
-				2F23764C1977FF09589D68931965E6C3 /* Pods-EggTimerMVVM-acknowledgements.plist */,
-				BDD88CF0F18F04C15DE267A125A18D2C /* Pods-EggTimerMVVM-dummy.m */,
-				619235A46392008D1E512C76CE1519E7 /* Pods-EggTimerMVVM-Info.plist */,
-				A15C48FC8A9892B9779E5C75C48B162D /* Pods-EggTimerMVVM-umbrella.h */,
-				A26D1E34E88B044600712973DC13D661 /* Pods-EggTimerMVVM.debug.xcconfig */,
-				2BEA021FD6772D092F97D33EB24FBD54 /* Pods-EggTimerMVVM.release.xcconfig */,
-			);
-			name = "Pods-EggTimerMVVM";
-			path = "Target Support Files/Pods-EggTimerMVVM";
-			sourceTree = "<group>";
-		};
-		336E29F9F756D7510B9DF60C3F1D77E1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
+				13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */,
 				964AD9F070707D5ACBF6AB418B146BEE /* Pods-EggTimerMVVM */,
 				DFB5990294110A8292D8BCFD9FB5105E /* Pods-EggTimerMVVM-EggTimerMVVMUITests */,
 				AB1F1EF7D475C6ED33076C7AE44EC376 /* Pods-EggTimerMVVMTests */,
@@ -146,50 +244,193 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		0E607B8C21FA2BA40F9E59C754C98AD3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				47C1F7D15DF1E2C8B980BC1B49D38419 /* CoreGraphics.framework */,
+				95568154064CE960195D45B95A17D3E7 /* CoreMedia.framework */,
+				C6B4A357A9E84FBAC4505EFF2873D26B /* Foundation.framework */,
+				F8C830FF7C3F0EB792F7F0D41B08BE65 /* QuartzCore.framework */,
+				FAD9AC0426072933256DCBD071CD50BA /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		82ABC19C7DFADEAA294B7E355EF5C3CF /* Targets Support Files */ = {
+		59E5466C707BD923DC6107B21FF9FBC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				285C52227CD675239C0F52B818EC2529 /* Pods-EggTimerMVVM */,
-				1A70E73E65EAC5D79E2FFC746EC7E2C0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */,
-				084D127E2062C6600B981B7D20A88D49 /* Pods-EggTimerMVVMTests */,
+				6EAC0F4211396AEE915F289C7F37D274 /* Hero */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6EAC0F4211396AEE915F289C7F37D274 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				495E6988AFF104DE0A5B70B19568DD5C /* Array+HeroModifier.swift */,
+				3473B500A32B2D92091550F5E56ABC69 /* BasePreprocessor.swift */,
+				B21D76D27E27C94F70433CB61319E522 /* CALayer+Hero.swift */,
+				AC77C49D2AD96C19F55BAA2870E24F80 /* CAMediaTimingFunction+Hero.swift */,
+				D2DEF8139E6EEB34AB7105D9FF038093 /* CascadePreprocessor.swift */,
+				6BA6F09A39D853C7D46A819A8F355004 /* CG+Hero.swift */,
+				B570E5FC120761D15568C1A9A9B5B4BC /* ConditionalPreprocessor.swift */,
+				8A3306329C70EB2E72F03CB684F03FDB /* DefaultAnimationPreprocessor.swift */,
+				AF328D6DFA4B2DE9F33AB7FE01D17F29 /* DispatchQueue+Hero.swift */,
+				7FDC2F69E59F699D818484A748E62994 /* HeroAnimatorViewContext.swift */,
+				9D77B7B5CE088BAC091D137C899585C2 /* HeroCompatible.swift */,
+				25EDEAD4FFB8214A9B00C211BFBC2406 /* HeroContext.swift */,
+				6BE80B5B7CEE8CC6AC954AF9EDC87006 /* HeroCoreAnimationViewContext.swift */,
+				44E09680BEECB6ED359E52FFF2610B78 /* HeroDebugPlugin.swift */,
+				2D47C8468E53A8F88B7A986211CA6E71 /* HeroDebugView.swift */,
+				9665A10CAE0DCE2B5D79D7BB25D3E28D /* HeroDefaultAnimator.swift */,
+				A480F126B86721A37CB18A7FD18F5BBB /* HeroModifier.swift */,
+				C2F9682901DAB850956CF6760D51AE5C /* HeroModifier+Advanced.swift */,
+				28FD919A10138BB7DF8B46DC24C6AF4C /* HeroModifier+HeroStringConvertible.swift */,
+				A6EC6EEA8C33868F412BFB72C661B7D2 /* HeroPlugin.swift */,
+				116E6E8E9A43FE8169F0AB432EA6EA2A /* HeroProgressRunner.swift */,
+				43D06718F811147D609B08ED9CFD510C /* HeroStringConvertible.swift */,
+				40BB5A718D416633B5A0C5B0ED765CBE /* HeroTargetState.swift */,
+				1F4E394EF34240B2953C1C891CD9F749 /* HeroTransition.swift */,
+				764769E1A70CA77E6C545B4CDC2008AB /* HeroTransition+Animate.swift */,
+				9DF2128481F016D24960B5FEC0A58A3D /* HeroTransition+Complete.swift */,
+				B2F5356DD4A9860261C41AD432AD71EC /* HeroTransition+CustomTransition.swift */,
+				3830F2F563F4B3440BC1C820CA23FD6B /* HeroTransition+Interactive.swift */,
+				186210D9BF5D4F03245C2C55ED22B1BA /* HeroTransition+Start.swift */,
+				29D35608583606E2C3EC7B5BD6B7F49A /* HeroTransition+UINavigationControllerDelegate.swift */,
+				1680036E020247BA9E24A4771E27926A /* HeroTransition+UITabBarControllerDelegate.swift */,
+				92DA2005223340EA938B82E9D6D30577 /* HeroTransition+UIViewControllerTransitioningDelegate.swift */,
+				AA26414D900F70A1F10E39BCB349066E /* HeroTransitionState.swift */,
+				A3E90B1DB9022318D2C8F4C4843FCA50 /* HeroTypes.swift */,
+				7CC876CA818409A56658030F26FA0F37 /* HeroViewControllerDelegate.swift */,
+				D51C5CF3EB3F62A2CAFABA0D8E8D9EC8 /* HeroViewPropertyViewContext.swift */,
+				75B8FC9278B90A29B72AEE6B2C26C08A /* IgnoreSubviewModifiersPreprocessor.swift */,
+				6F6849B6FFBB657FCFF41ED5958D3738 /* Lexer.swift */,
+				5FE9AC7CD2302F653813CA03B020885A /* Locale+Hero.swift */,
+				5E153695A56A15F4D097768AC4953F90 /* MatchPreprocessor.swift */,
+				3CD825FAE02BA8F3E0E1048212123F84 /* Nodes.swift */,
+				C7ECBBAAC9537D15751EA8392C3E4BE1 /* Parser.swift */,
+				FD0A41AD81D11D32D1A93BA9941A90BA /* Regex.swift */,
+				A640DAA292A8E3E1D3C34F25C2D716D1 /* SourcePreprocessor.swift */,
+				C0C7148DF5C628FA9BF9B8433BB75E2A /* SwiftSupport.swift */,
+				42AE4626839002E8F0CA7DEB0351C19C /* UIColor+HexString.swift */,
+				9FCF826C4044A6E5855BDB45B97FD6C4 /* UIKit+Hero.swift */,
+				936E3CE1667824D9A38E0C7F204D490C /* UIView+Hero.swift */,
+				839CE419183725F5151D21BD4D69F8EE /* UIViewController+Hero.swift */,
+				9E01FB50D1A04275273DBD09F5ED2C92 /* Support Files */,
+			);
+			path = Hero;
+			sourceTree = "<group>";
+		};
+		813A1EDE96F20B63C716AD8C7ACA1F02 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A93BD4AE6364A6E1F4F0CEDE154B32FB /* Pods-EggTimerMVVM */,
+				B5C5B434E52098FBA12B2EF4498100F9 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */,
+				BE39CB11460B8E64AAC5B68D3C06825B /* Pods-EggTimerMVVMTests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9E01FB50D1A04275273DBD09F5ED2C92 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0B87AC365247A4A2678DB5499E4D1D53 /* Hero.modulemap */,
+				D5226DC848D5183910F0BDCA44369141 /* Hero-dummy.m */,
+				514DF68E83E93E6FD071D4C60DB2845A /* Hero-Info.plist */,
+				6C7A23CB7387A8BD8BBBA2349032414E /* Hero-prefix.pch */,
+				C2152E389D390484545054D8C7104DC0 /* Hero-umbrella.h */,
+				D1D608CC553A265F095DD435564AE0A9 /* Hero.debug.xcconfig */,
+				44EB696AEF37B1D48A8CCC7846E580F5 /* Hero.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Hero";
+			sourceTree = "<group>";
+		};
+		A93BD4AE6364A6E1F4F0CEDE154B32FB /* Pods-EggTimerMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				80CBFBD876B3A6676DAE64BF4390376D /* Pods-EggTimerMVVM.modulemap */,
+				53BDD5DDFED9E6E64D27CFFFB58ED656 /* Pods-EggTimerMVVM-acknowledgements.markdown */,
+				6C5BD92742E09DBDBD910FB9126C9510 /* Pods-EggTimerMVVM-acknowledgements.plist */,
+				26AA12A076E8DE87C55815CD27BDFF9D /* Pods-EggTimerMVVM-dummy.m */,
+				FBCE0B3B6910A0F604AC2BA9CF401D02 /* Pods-EggTimerMVVM-frameworks.sh */,
+				871666C9D9C9220A70D44F5C4E2B923A /* Pods-EggTimerMVVM-Info.plist */,
+				5AC2C541E81D279ADA960CB3D23338E3 /* Pods-EggTimerMVVM-umbrella.h */,
+				EF15C99C81D6843210FA9A37718D2B49 /* Pods-EggTimerMVVM.debug.xcconfig */,
+				13C5D261F9DA23DF8437D36572C8BE28 /* Pods-EggTimerMVVM.release.xcconfig */,
+			);
+			name = "Pods-EggTimerMVVM";
+			path = "Target Support Files/Pods-EggTimerMVVM";
+			sourceTree = "<group>";
+		};
+		B5C5B434E52098FBA12B2EF4498100F9 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				907E692C2BCAC22616D18FE605921B04 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap */,
+				1D39E5051CF7E88A1677161EFFE69249 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.markdown */,
+				D437E8E602D658A003A6D5C3E36CB3C0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-acknowledgements.plist */,
+				22548C8148EA2FF04FCAD08CB27BAA72 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m */,
+				3B2F4F35FE0A79D207ED2ACF1D77ED29 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-frameworks.sh */,
+				CA74CE1684AA066442F8B0AF8D80148B /* Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist */,
+				F185F4E7F0FDC90E68076189130090B0 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h */,
+				3CEFBCB34E20FE2EC0556179F7939941 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */,
+				DB97BCB8CD2E73C418E378D84285C7F4 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */,
+			);
+			name = "Pods-EggTimerMVVM-EggTimerMVVMUITests";
+			path = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests";
+			sourceTree = "<group>";
+		};
+		B94D7768568A9992200DB461E8CF687F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E607B8C21FA2BA40F9E59C754C98AD3 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE39CB11460B8E64AAC5B68D3C06825B /* Pods-EggTimerMVVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				261EC014CDDEC4169D53A3A2CA9B06CC /* Pods-EggTimerMVVMTests.modulemap */,
+				F7015E3D68F1D9A24655ADC7DFD39BC5 /* Pods-EggTimerMVVMTests-acknowledgements.markdown */,
+				ECF8B6AEA6F8D52DB4A47B55528538DE /* Pods-EggTimerMVVMTests-acknowledgements.plist */,
+				172B319CE81416A85C2EBE83673E5F70 /* Pods-EggTimerMVVMTests-dummy.m */,
+				8E5F63E42D4AABD17FF116D5867F11F7 /* Pods-EggTimerMVVMTests-Info.plist */,
+				6EA377E59E0F348E6AFD0ABDDCE42307 /* Pods-EggTimerMVVMTests-umbrella.h */,
+				CE0AD98AD80B8A6510D4EEC16EF67543 /* Pods-EggTimerMVVMTests.debug.xcconfig */,
+				7A2663D9DA9BD922801AB42FFB0832D9 /* Pods-EggTimerMVVMTests.release.xcconfig */,
+			);
+			name = "Pods-EggTimerMVVMTests";
+			path = "Target Support Files/Pods-EggTimerMVVMTests";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				336E29F9F756D7510B9DF60C3F1D77E1 /* Products */,
-				82ABC19C7DFADEAA294B7E355EF5C3CF /* Targets Support Files */,
+				B94D7768568A9992200DB461E8CF687F /* Frameworks */,
+				59E5466C707BD923DC6107B21FF9FBC7 /* Pods */,
+				0A33CE89DD202ED6920C8DF39AF17425 /* Products */,
+				813A1EDE96F20B63C716AD8C7ACA1F02 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		73A4E69B7AA5768F46E11D70EA3A6BD9 /* Headers */ = {
+		1C16F7EDD1B69208C6273C07E999CE2F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C911B4FAFA8C8B2B6B58183AB9D1E7F9 /* Pods-EggTimerMVVM-umbrella.h in Headers */,
+				03494FEF50DC7E3256E1D508D51458CC /* Hero-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41E1BC4C4172FFD645E95B0CFD917BD4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511AABB21EDDB45BCC57C54B2C7E470C /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,29 +442,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC16C3DE44F0F643CEEAABA5400E68FE /* Headers */ = {
+		FC6E583C02E369061B4AF18993B6B4C0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C63ED29DAD67BFB9138FFEB577FA20 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h in Headers */,
+				44A38244208CA2DAA5FE9821063C73EF /* Pods-EggTimerMVVM-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BD5F0BCAD238C0CC47BDC084CE930ADD /* Pods-EggTimerMVVM */ = {
+		B3893AEA4D7DBB9A086E889FC469132D /* Hero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA2E4B09E6F3EBE8DC9342C29D0EE869 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM" */;
+			buildConfigurationList = BA5DFF32CB304B0146579BDB2FF308AD /* Build configuration list for PBXNativeTarget "Hero" */;
 			buildPhases = (
-				73A4E69B7AA5768F46E11D70EA3A6BD9 /* Headers */,
-				2C42A65324FC22DB9BC10769C2A726C2 /* Sources */,
-				928A469FF374D22642B9F5E38003B5E8 /* Frameworks */,
-				AB316A353C566ED04D460E19EB53C3AA /* Resources */,
+				1C16F7EDD1B69208C6273C07E999CE2F /* Headers */,
+				65EAEF99233906F5B5A18F93AFF73DCD /* Sources */,
+				60B172CCA7AF67E6261B20C3AA42AF0C /* Frameworks */,
+				4BD51ABF96271A288BB09CF3EEDCA068 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = Hero;
+			productName = Hero;
+			productReference = 13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD5F0BCAD238C0CC47BDC084CE930ADD /* Pods-EggTimerMVVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75A4BCF38F419629A861987E955E4506 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM" */;
+			buildPhases = (
+				FC6E583C02E369061B4AF18993B6B4C0 /* Headers */,
+				C29342440679091C10508F44F9C2C841 /* Sources */,
+				54F7E19270697682C110C60D70144419 /* Frameworks */,
+				100F9FA433A384E33457C793BAC59EC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F7CF028806C506A912D4E2F34CC687A /* PBXTargetDependency */,
 			);
 			name = "Pods-EggTimerMVVM";
 			productName = Pods_EggTimerMVVM;
@@ -232,16 +492,17 @@
 		};
 		EDB6C87BA7D31F7DED83E78565B4C828 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E9AFB8C6629249D1CD571496685D1A5C /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM-EggTimerMVVMUITests" */;
+			buildConfigurationList = 384CD09263DF65630EA474529E7CDD95 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM-EggTimerMVVMUITests" */;
 			buildPhases = (
-				FC16C3DE44F0F643CEEAABA5400E68FE /* Headers */,
-				C9147DC1494618C4DA9C9DF93119D4A8 /* Sources */,
-				AEDF3BB540A437BB94DAAD54EEC26CC5 /* Frameworks */,
-				59684E0D7775711442C27C0C380A648B /* Resources */,
+				41E1BC4C4172FFD645E95B0CFD917BD4 /* Headers */,
+				97C78EEEE63C9ADFC6E2C1E90587A63D /* Sources */,
+				856EC3D22CB97E95DC568D9C439BBC93 /* Frameworks */,
+				24480DC4D68755F3C982DC8533595587 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E53FC087005B3224F3A84D30ADF5F7DD /* PBXTargetDependency */,
 			);
 			name = "Pods-EggTimerMVVM-EggTimerMVVMUITests";
 			productName = Pods_EggTimerMVVM_EggTimerMVVMUITests;
@@ -260,7 +521,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				76BF59C6DCECCD2075E1A2564BAE8A26 /* PBXTargetDependency */,
+				D66BC7F856DEDC0128D3E10172AA96B7 /* PBXTargetDependency */,
 			);
 			name = "Pods-EggTimerMVVMTests";
 			productName = Pods_EggTimerMVVMTests;
@@ -274,7 +535,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1340;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -285,10 +546,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 336E29F9F756D7510B9DF60C3F1D77E1 /* Products */;
+			productRefGroup = 0A33CE89DD202ED6920C8DF39AF17425 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B3893AEA4D7DBB9A086E889FC469132D /* Hero */,
 				BD5F0BCAD238C0CC47BDC084CE930ADD /* Pods-EggTimerMVVM */,
 				EDB6C87BA7D31F7DED83E78565B4C828 /* Pods-EggTimerMVVM-EggTimerMVVMUITests */,
 				F2B57EAD99A437CC02496609F1B167B0 /* Pods-EggTimerMVVMTests */,
@@ -297,14 +559,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		59684E0D7775711442C27C0C380A648B /* Resources */ = {
+		100F9FA433A384E33457C793BAC59EC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB316A353C566ED04D460E19EB53C3AA /* Resources */ = {
+		24480DC4D68755F3C982DC8533595587 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BD51ABF96271A288BB09CF3EEDCA068 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,11 +590,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2C42A65324FC22DB9BC10769C2A726C2 /* Sources */ = {
+		65EAEF99233906F5B5A18F93AFF73DCD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A72A198AF9C8D18A091153C4055554D2 /* Pods-EggTimerMVVM-dummy.m in Sources */,
+				FB5225F3940E5186566D5BDD47C30BD1 /* Array+HeroModifier.swift in Sources */,
+				CD203F1B89EAE6EB96A1D3FDB5082D2B /* BasePreprocessor.swift in Sources */,
+				BCE9E4B20B27631B7AA3B0CC6CB0E6B4 /* CALayer+Hero.swift in Sources */,
+				0153415516ADD1D706B173597E8D15DE /* CAMediaTimingFunction+Hero.swift in Sources */,
+				7E3B00774A4B94D728A983A67CE45669 /* CascadePreprocessor.swift in Sources */,
+				290CD7347996289C96A27A90A8372410 /* CG+Hero.swift in Sources */,
+				D2167C7CA3BAEFCECA853BBB3F7D88DD /* ConditionalPreprocessor.swift in Sources */,
+				95CD2FB157934A9AF9553A6DD32EE76B /* DefaultAnimationPreprocessor.swift in Sources */,
+				94611C229D3F5539A011373D00693D82 /* DispatchQueue+Hero.swift in Sources */,
+				7CC0BDDB81459D55B547C953AF175148 /* Hero-dummy.m in Sources */,
+				D77A44871E466FE472DD738E43711B01 /* HeroAnimatorViewContext.swift in Sources */,
+				EB00CE07C32B67FE1E78BE0875CFA875 /* HeroCompatible.swift in Sources */,
+				D7278C7E94DC131BD1610F43076819BD /* HeroContext.swift in Sources */,
+				5D6A6933FF63F86D2B8C7534315D484C /* HeroCoreAnimationViewContext.swift in Sources */,
+				34F20820D5F3E08CA3C6BE59E554BADF /* HeroDebugPlugin.swift in Sources */,
+				7E8E54FF0A03B7BADEBF22C10AF9ABB1 /* HeroDebugView.swift in Sources */,
+				151482556525CEF81110CC0A9CA9E1E0 /* HeroDefaultAnimator.swift in Sources */,
+				D286BC2C12C3C097ED2C5115C9AC772C /* HeroModifier.swift in Sources */,
+				36B3BF9B3AA60BCA8BA0D1C8869505D7 /* HeroModifier+Advanced.swift in Sources */,
+				24580BEC54DF3EB1A69034AB26B5E684 /* HeroModifier+HeroStringConvertible.swift in Sources */,
+				CB0AC15AA50B46C4B84FD40F2229F8C4 /* HeroPlugin.swift in Sources */,
+				71438073BBD2C6C1D77748E56D6C0F9B /* HeroProgressRunner.swift in Sources */,
+				AE311AF2F53F908249E96319F3688927 /* HeroStringConvertible.swift in Sources */,
+				ABC06AC2D319CE550CDB3C31CD23F759 /* HeroTargetState.swift in Sources */,
+				CFB856AA712DF68446678D39DCD0EB71 /* HeroTransition.swift in Sources */,
+				6C9C33E5CF926D0E3BAA5E89A003A2F1 /* HeroTransition+Animate.swift in Sources */,
+				8E011223B84081D7759DDD9D86113C72 /* HeroTransition+Complete.swift in Sources */,
+				14F874BF94A20C6784C5ED78061DFDF4 /* HeroTransition+CustomTransition.swift in Sources */,
+				3BD418D01ECA25B9748E4B5B91EA2180 /* HeroTransition+Interactive.swift in Sources */,
+				22CEEBC7570EB19BD931797B0D740C89 /* HeroTransition+Start.swift in Sources */,
+				A7DB847A513187E25ED1F299E10EF9C4 /* HeroTransition+UINavigationControllerDelegate.swift in Sources */,
+				239C0A6B4FACB1A42ADFC078BCB90300 /* HeroTransition+UITabBarControllerDelegate.swift in Sources */,
+				7987894C6A2A1420E9AC7ABBD01A1F3C /* HeroTransition+UIViewControllerTransitioningDelegate.swift in Sources */,
+				B1883A0E868F7E4D81930F39C0E5B1DC /* HeroTransitionState.swift in Sources */,
+				A1CE141B1C185FB73E7EDF61A2A6E42F /* HeroTypes.swift in Sources */,
+				306FF02477BFE1D4104A4EAAD5A35F3C /* HeroViewControllerDelegate.swift in Sources */,
+				E724F3BB81DD7C9E512A22072DE751B4 /* HeroViewPropertyViewContext.swift in Sources */,
+				FE6F1C6D1A1C224FD5EED4FAFFB19480 /* IgnoreSubviewModifiersPreprocessor.swift in Sources */,
+				B6AA345C6C1AD7C15E59CA69355FEACB /* Lexer.swift in Sources */,
+				72CEB6C018ED66F705CE583804121DF9 /* Locale+Hero.swift in Sources */,
+				2F1E6A6C4948882F43A6665788765278 /* MatchPreprocessor.swift in Sources */,
+				945B9DBBE9F52087055A2A844976A4D8 /* Nodes.swift in Sources */,
+				A0B0D60C0789D86925FBD22DB9E9F76A /* Parser.swift in Sources */,
+				C56A5F0000597F6706F6AFBBEE77FA6E /* Regex.swift in Sources */,
+				B58F2A64CB7DE3D0A6D0BCD6B1D0085F /* SourcePreprocessor.swift in Sources */,
+				84D2F28E4B4CBEB043380B30CBE3EAD9 /* SwiftSupport.swift in Sources */,
+				4C4CA750821B7AB5D77382FA15318259 /* UIColor+HexString.swift in Sources */,
+				D85EF87FE963C92FF9D30B0A79CB2625 /* UIKit+Hero.swift in Sources */,
+				FCA8E9B6166E2349ADF7D4A53C1E904E /* UIView+Hero.swift in Sources */,
+				F1A085326179C7F156053D6BF35B620B /* UIViewController+Hero.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97C78EEEE63C9ADFC6E2C1E90587A63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDBDEC8B10A675FDF6CC2ADB3688BCBC /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,29 +663,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9147DC1494618C4DA9C9DF93119D4A8 /* Sources */ = {
+		C29342440679091C10508F44F9C2C841 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0A043D024924D66BE3653AC1FE648E4 /* Pods-EggTimerMVVM-EggTimerMVVMUITests-dummy.m in Sources */,
+				682B06B34DE7400B60ECABB01FF8BF72 /* Pods-EggTimerMVVM-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		76BF59C6DCECCD2075E1A2564BAE8A26 /* PBXTargetDependency */ = {
+		4F7CF028806C506A912D4E2F34CC687A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hero;
+			target = B3893AEA4D7DBB9A086E889FC469132D /* Hero */;
+			targetProxy = F35C64263C558A7682D2CD272F58A4D1 /* PBXContainerItemProxy */;
+		};
+		D66BC7F856DEDC0128D3E10172AA96B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-EggTimerMVVM";
 			target = BD5F0BCAD238C0CC47BDC084CE930ADD /* Pods-EggTimerMVVM */;
-			targetProxy = DBD4FFE83C953407E7EB17FFE6427085 /* PBXContainerItemProxy */;
+			targetProxy = EDCD05B005C478E3FCD61669E7C5C771 /* PBXContainerItemProxy */;
+		};
+		E53FC087005B3224F3A84D30ADF5F7DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hero;
+			target = B3893AEA4D7DBB9A086E889FC469132D /* Hero */;
+			targetProxy = D6D106F2C094C35AE229ACB9C29651A0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		06B6FC7CAF41DDF4F0BE5A4218709F76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE8CDCB931FC0160C90772E5BA56F732 /* Pods-EggTimerMVVMTests.release.xcconfig */;
+			baseConfigurationReference = 7A2663D9DA9BD922801AB42FFB0832D9 /* Pods-EggTimerMVVMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -461,6 +799,43 @@
 			};
 			name = Debug;
 		};
+		0E9EDB4BC43F5E8BD1D001E9222D1C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF15C99C81D6843210FA9A37718D2B49 /* Pods-EggTimerMVVM.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		2DE0D8898245310716431F92FA4989FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,11 +898,10 @@
 			};
 			name = Release;
 		};
-		987C0FA38EA8C6909F4350C9DAFA4CED /* Debug */ = {
+		503E3D4574EF6CE509A625CAE8BD5A58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11265B0121C82D336876A878E52978E3 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */;
+			baseConfigurationReference = 44EB696AEF37B1D48A8CCC7846E580F5 /* Hero.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -537,60 +911,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				PRODUCT_MODULE_NAME = Hero;
+				PRODUCT_NAME = Hero;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A74E6F2F45CDDC0EECB80913B26A4BC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B4FEB8444F3DDC6594C8D297EBB2D53 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -598,9 +934,44 @@
 			};
 			name = Release;
 		};
-		AA4D6A20D81B90EBCC74068E67082F92 /* Release */ = {
+		9ED722F15F248CEAFCC455391A864045 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BEA021FD6772D092F97D33EB24FBD54 /* Pods-EggTimerMVVM.release.xcconfig */;
+			baseConfigurationReference = D1D608CC553A265F095DD435564AE0A9 /* Hero.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Hero/Hero.modulemap";
+				PRODUCT_MODULE_NAME = Hero;
+				PRODUCT_NAME = Hero;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1A363D9938A27FD11A672AEF2EA837C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13C5D261F9DA23DF8437D36572C8BE28 /* Pods-EggTimerMVVM.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -636,9 +1007,84 @@
 			};
 			name = Release;
 		};
+		E202E879C793A0DAA08ADB628C6C3303 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CEFBCB34E20FE2EC0556179F7939941 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E8945AA8B33D0AD2AD39F9DE360D32E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB97BCB8CD2E73C418E378D84285C7F4 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EECFDA4EFD0195C112A9BEE915B85E0F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A511BD9B2C1FE631CFF40AE6F5BF6F2 /* Pods-EggTimerMVVMTests.debug.xcconfig */;
+			baseConfigurationReference = CE0AD98AD80B8A6510D4EEC16EF67543 /* Pods-EggTimerMVVMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -673,43 +1119,6 @@
 			};
 			name = Debug;
 		};
-		FD544619D311567F67F25A18C2F2C08C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A26D1E34E88B044600712973DC13D661 /* Pods-EggTimerMVVM.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -718,6 +1127,15 @@
 			buildConfigurations = (
 				EECFDA4EFD0195C112A9BEE915B85E0F /* Debug */,
 				06B6FC7CAF41DDF4F0BE5A4218709F76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		384CD09263DF65630EA474529E7CDD95 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM-EggTimerMVVMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E202E879C793A0DAA08ADB628C6C3303 /* Debug */,
+				E8945AA8B33D0AD2AD39F9DE360D32E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -731,20 +1149,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA2E4B09E6F3EBE8DC9342C29D0EE869 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM" */ = {
+		75A4BCF38F419629A861987E955E4506 /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD544619D311567F67F25A18C2F2C08C /* Debug */,
-				AA4D6A20D81B90EBCC74068E67082F92 /* Release */,
+				0E9EDB4BC43F5E8BD1D001E9222D1C46 /* Debug */,
+				C1A363D9938A27FD11A672AEF2EA837C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E9AFB8C6629249D1CD571496685D1A5C /* Build configuration list for PBXNativeTarget "Pods-EggTimerMVVM-EggTimerMVVMUITests" */ = {
+		BA5DFF32CB304B0146579BDB2FF308AD /* Build configuration list for PBXNativeTarget "Hero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				987C0FA38EA8C6909F4350C9DAFA4CED /* Debug */,
-				A74E6F2F45CDDC0EECB80913B26A4BC5 /* Release */,
+				9ED722F15F248CEAFCC455391A864045 /* Debug */,
+				503E3D4574EF6CE509A625CAE8BD5A58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
