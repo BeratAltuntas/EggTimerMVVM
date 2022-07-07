@@ -15,6 +15,10 @@
 		F44CAB4328774272005C1376 /* EggTimerMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4228774272005C1376 /* EggTimerMVVMTests.swift */; };
 		F44CAB4D28774272005C1376 /* EggTimerMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4C28774272005C1376 /* EggTimerMVVMUITests.swift */; };
 		F44CAB4F28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4E28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift */; };
+		F44CAB612877442D005C1376 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB602877442D005C1376 /* HomeViewController.swift */; };
+		F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB622877444B005C1376 /* EggDetailViewController.swift */; };
+		F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6428774473005C1376 /* HomeViewModel.swift */; };
+		F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6628774485005C1376 /* EggDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		F44CAB4828774272005C1376 /* EggTimerMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggTimerMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44CAB4C28774272005C1376 /* EggTimerMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerMVVMUITests.swift; sourceTree = "<group>"; };
 		F44CAB4E28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerMVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F44CAB602877442D005C1376 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F44CAB622877444B005C1376 /* EggDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewController.swift; sourceTree = "<group>"; };
+		F44CAB6428774473005C1376 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F44CAB6628774485005C1376 /* EggDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +152,8 @@
 		F44CAB5D287742A1005C1376 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F44CAB6428774473005C1376 /* HomeViewModel.swift */,
+				F44CAB6628774485005C1376 /* EggDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 		F44CAB5E2877431B005C1376 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F44CAB602877442D005C1376 /* HomeViewController.swift */,
+				F44CAB622877444B005C1376 /* EggDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,7 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
+				F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */,
 				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
+				F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */,
+				F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */,
+				F44CAB612877442D005C1376 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
