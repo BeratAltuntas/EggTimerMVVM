@@ -1,0 +1,6 @@
+framework module Pods_EggTimerMVVM_EggTimerMVVMUITests {
+  umbrella header "Pods-EggTimerMVVM-EggTimerMVVMUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
