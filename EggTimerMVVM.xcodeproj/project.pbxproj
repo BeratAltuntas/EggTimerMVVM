@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB2B2877426D005C1376 /* AppDelegate.swift */; };
+		F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB2D2877426D005C1376 /* SceneDelegate.swift */; };
+		F44CAB332877426D005C1376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44CAB312877426D005C1376 /* Main.storyboard */; };
+		F44CAB3528774272005C1376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F44CAB3428774272005C1376 /* Assets.xcassets */; };
+		F44CAB3828774272005C1376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44CAB3628774272005C1376 /* LaunchScreen.storyboard */; };
+		F44CAB4328774272005C1376 /* EggTimerMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4228774272005C1376 /* EggTimerMVVMTests.swift */; };
+		F44CAB4D28774272005C1376 /* EggTimerMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4C28774272005C1376 /* EggTimerMVVMUITests.swift */; };
+		F44CAB4F28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB4E28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F44CAB3F28774272005C1376 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44CAB202877426D005C1376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F44CAB272877426D005C1376;
+			remoteInfo = EggTimerMVVM;
+		};
+		F44CAB4928774272005C1376 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F44CAB202877426D005C1376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F44CAB272877426D005C1376;
+			remoteInfo = EggTimerMVVM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F44CAB282877426D005C1376 /* EggTimerMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimerMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44CAB2B2877426D005C1376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F44CAB2D2877426D005C1376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F44CAB322877426D005C1376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F44CAB3428774272005C1376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F44CAB3728774272005C1376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F44CAB3928774272005C1376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F44CAB3E28774272005C1376 /* EggTimerMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggTimerMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44CAB4228774272005C1376 /* EggTimerMVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerMVVMTests.swift; sourceTree = "<group>"; };
+		F44CAB4828774272005C1376 /* EggTimerMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EggTimerMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44CAB4C28774272005C1376 /* EggTimerMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerMVVMUITests.swift; sourceTree = "<group>"; };
+		F44CAB4E28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimerMVVMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F44CAB252877426D005C1376 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB3B28774272005C1376 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB4528774272005C1376 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F44CAB1F2877426D005C1376 = {
+			isa = PBXGroup;
+			children = (
+				F44CAB2A2877426D005C1376 /* EggTimerMVVM */,
+				F44CAB4128774272005C1376 /* EggTimerMVVMTests */,
+				F44CAB4B28774272005C1376 /* EggTimerMVVMUITests */,
+				F44CAB292877426D005C1376 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F44CAB292877426D005C1376 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB282877426D005C1376 /* EggTimerMVVM.app */,
+				F44CAB3E28774272005C1376 /* EggTimerMVVMTests.xctest */,
+				F44CAB4828774272005C1376 /* EggTimerMVVMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F44CAB2A2877426D005C1376 /* EggTimerMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB5F28774340005C1376 /* Storyboards */,
+				F44CAB5E2877431B005C1376 /* Views */,
+				F44CAB5D287742A1005C1376 /* ViewModels */,
+				F44CAB5C28774290005C1376 /* Models */,
+				F44CAB5B28774284005C1376 /* SupportingFiles */,
+				F44CAB3928774272005C1376 /* Info.plist */,
+			);
+			path = EggTimerMVVM;
+			sourceTree = "<group>";
+		};
+		F44CAB4128774272005C1376 /* EggTimerMVVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB4228774272005C1376 /* EggTimerMVVMTests.swift */,
+			);
+			path = EggTimerMVVMTests;
+			sourceTree = "<group>";
+		};
+		F44CAB4B28774272005C1376 /* EggTimerMVVMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB4C28774272005C1376 /* EggTimerMVVMUITests.swift */,
+				F44CAB4E28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift */,
+			);
+			path = EggTimerMVVMUITests;
+			sourceTree = "<group>";
+		};
+		F44CAB5B28774284005C1376 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB3428774272005C1376 /* Assets.xcassets */,
+				F44CAB2B2877426D005C1376 /* AppDelegate.swift */,
+				F44CAB2D2877426D005C1376 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F44CAB5C28774290005C1376 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F44CAB5D287742A1005C1376 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F44CAB5E2877431B005C1376 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F44CAB5F28774340005C1376 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F44CAB312877426D005C1376 /* Main.storyboard */,
+				F44CAB3628774272005C1376 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F44CAB272877426D005C1376 /* EggTimerMVVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44CAB5228774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVM" */;
+			buildPhases = (
+				F44CAB242877426D005C1376 /* Sources */,
+				F44CAB252877426D005C1376 /* Frameworks */,
+				F44CAB262877426D005C1376 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EggTimerMVVM;
+			productName = EggTimerMVVM;
+			productReference = F44CAB282877426D005C1376 /* EggTimerMVVM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F44CAB3D28774272005C1376 /* EggTimerMVVMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44CAB5528774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVMTests" */;
+			buildPhases = (
+				F44CAB3A28774272005C1376 /* Sources */,
+				F44CAB3B28774272005C1376 /* Frameworks */,
+				F44CAB3C28774272005C1376 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F44CAB4028774272005C1376 /* PBXTargetDependency */,
+			);
+			name = EggTimerMVVMTests;
+			productName = EggTimerMVVMTests;
+			productReference = F44CAB3E28774272005C1376 /* EggTimerMVVMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F44CAB4728774272005C1376 /* EggTimerMVVMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F44CAB5828774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVMUITests" */;
+			buildPhases = (
+				F44CAB4428774272005C1376 /* Sources */,
+				F44CAB4528774272005C1376 /* Frameworks */,
+				F44CAB4628774272005C1376 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F44CAB4A28774272005C1376 /* PBXTargetDependency */,
+			);
+			name = EggTimerMVVMUITests;
+			productName = EggTimerMVVMUITests;
+			productReference = F44CAB4828774272005C1376 /* EggTimerMVVMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F44CAB202877426D005C1376 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					F44CAB272877426D005C1376 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					F44CAB3D28774272005C1376 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = F44CAB272877426D005C1376;
+					};
+					F44CAB4728774272005C1376 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = F44CAB272877426D005C1376;
+					};
+				};
+			};
+			buildConfigurationList = F44CAB232877426D005C1376 /* Build configuration list for PBXProject "EggTimerMVVM" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F44CAB1F2877426D005C1376;
+			productRefGroup = F44CAB292877426D005C1376 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F44CAB272877426D005C1376 /* EggTimerMVVM */,
+				F44CAB3D28774272005C1376 /* EggTimerMVVMTests */,
+				F44CAB4728774272005C1376 /* EggTimerMVVMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F44CAB262877426D005C1376 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44CAB3828774272005C1376 /* LaunchScreen.storyboard in Resources */,
+				F44CAB3528774272005C1376 /* Assets.xcassets in Resources */,
+				F44CAB332877426D005C1376 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB3C28774272005C1376 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB4628774272005C1376 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F44CAB242877426D005C1376 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
+				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB3A28774272005C1376 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44CAB4328774272005C1376 /* EggTimerMVVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F44CAB4428774272005C1376 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F44CAB4F28774272005C1376 /* EggTimerMVVMUITestsLaunchTests.swift in Sources */,
+				F44CAB4D28774272005C1376 /* EggTimerMVVMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F44CAB4028774272005C1376 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F44CAB272877426D005C1376 /* EggTimerMVVM */;
+			targetProxy = F44CAB3F28774272005C1376 /* PBXContainerItemProxy */;
+		};
+		F44CAB4A28774272005C1376 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F44CAB272877426D005C1376 /* EggTimerMVVM */;
+			targetProxy = F44CAB4928774272005C1376 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F44CAB312877426D005C1376 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44CAB322877426D005C1376 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F44CAB3628774272005C1376 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F44CAB3728774272005C1376 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F44CAB5028774272005C1376 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F44CAB5128774272005C1376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F44CAB5328774272005C1376 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EggTimerMVVM/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F44CAB5428774272005C1376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EggTimerMVVM/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F44CAB5628774272005C1376 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EggTimerMVVM.app/EggTimerMVVM";
+			};
+			name = Debug;
+		};
+		F44CAB5728774272005C1376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EggTimerMVVM.app/EggTimerMVVM";
+			};
+			name = Release;
+		};
+		F44CAB5928774272005C1376 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EggTimerMVVM;
+			};
+			name = Debug;
+		};
+		F44CAB5A28774272005C1376 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3F2Y7B7Z54;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CBeratAltuntas.EggTimerMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EggTimerMVVM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F44CAB232877426D005C1376 /* Build configuration list for PBXProject "EggTimerMVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44CAB5028774272005C1376 /* Debug */,
+				F44CAB5128774272005C1376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44CAB5228774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44CAB5328774272005C1376 /* Debug */,
+				F44CAB5428774272005C1376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44CAB5528774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44CAB5628774272005C1376 /* Debug */,
+				F44CAB5728774272005C1376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F44CAB5828774272005C1376 /* Build configuration list for PBXNativeTarget "EggTimerMVVMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F44CAB5928774272005C1376 /* Debug */,
+				F44CAB5A28774272005C1376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F44CAB202877426D005C1376 /* Project object */;
+}
