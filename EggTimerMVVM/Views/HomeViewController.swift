@@ -86,9 +86,6 @@ final class HomeViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as! EggDetailViewController
         let eggViewModel = EggDetailViewModel()
         vc.viewModel = eggViewModel
-        
-        
-        enableHero()
         showHero(vc,navigationAnimationType: .zoom)
         
         //        guard let withImageTag = withImageTag else { return }
@@ -144,6 +141,5 @@ extension HomeViewController: HomeViewModelDelegate {
     func LoadUI() {
         SetupLabel()
         SetupImageViewContainer()
-        
     }
 }

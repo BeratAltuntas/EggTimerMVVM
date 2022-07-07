@@ -27,6 +27,8 @@
 		F48CF426287754B3001E7FD6 /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */; };
 		F48CF42A2877563C001E7FD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF4292877563C001E7FD6 /* Constants.swift */; };
 		F48CF42C28776F96001E7FD6 /* EggModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42B28776F96001E7FD6 /* EggModel.swift */; };
+		F48CF42F28777591001E7FD6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42E28777591001E7FD6 /* UserDefaultsManager.swift */; };
+		F48CF43128777682001E7FD6 /* Date+CustomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF43028777682001E7FD6 /* Date+CustomDates.swift */; };
 		FB1A6C42108166BEE4A41DBE /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B5BDC9A5719FE1EE750920 /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
 		F48CF4292877563C001E7FD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F48CF42B28776F96001E7FD6 /* EggModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggModel.swift; sourceTree = "<group>"; };
+		F48CF42E28777591001E7FD6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		F48CF43028777682001E7FD6 /* Date+CustomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CustomDates.swift"; sourceTree = "<group>"; };
 		FB6B9DF4E1A21020FBCF0D8D /* Pods-EggTimerMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerMVVM.release.xcconfig"; path = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -237,6 +241,7 @@
 				F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */,
 				F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */,
 				F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */,
+				F48CF43028777682001E7FD6 /* Date+CustomDates.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,8 +249,9 @@
 		F48CF42728775616001E7FD6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F48CF4282877561D001E7FD6 /* Utilities */,
 				F48CF41E28774FC3001E7FD6 /* Extensions */,
+				F48CF42D28777572001E7FD6 /* Managers */,
+				F48CF4282877561D001E7FD6 /* Utilities */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -256,6 +262,14 @@
 				F48CF4292877563C001E7FD6 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F48CF42D28777572001E7FD6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F48CF42E28777591001E7FD6 /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,12 +514,14 @@
 				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
 				F48CF42A2877563C001E7FD6 /* Constants.swift in Sources */,
 				F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */,
+				F48CF42F28777591001E7FD6 /* UserDefaultsManager.swift in Sources */,
 				F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */,
 				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
 				F48CF42C28776F96001E7FD6 /* EggModel.swift in Sources */,
 				F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */,
 				F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */,
 				F48CF426287754B3001E7FD6 /* UIFont+CustomFonts.swift in Sources */,
+				F48CF43128777682001E7FD6 /* Date+CustomDates.swift in Sources */,
 				F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */,
 				F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */,
 				F44CAB612877442D005C1376 /* HomeViewController.swift in Sources */,

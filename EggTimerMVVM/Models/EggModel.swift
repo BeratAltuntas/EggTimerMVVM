@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - EggModel
 struct EggModel {
     var eggName: String
     var eggImageName: String
