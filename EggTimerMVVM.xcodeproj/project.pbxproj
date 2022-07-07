@@ -24,6 +24,9 @@
 		F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */; };
 		F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */; };
 		F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */; };
+		F48CF426287754B3001E7FD6 /* UIFont+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */; };
+		F48CF42A2877563C001E7FD6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF4292877563C001E7FD6 /* Constants.swift */; };
+		F48CF42C28776F96001E7FD6 /* EggModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42B28776F96001E7FD6 /* EggModel.swift */; };
 		FB1A6C42108166BEE4A41DBE /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B5BDC9A5719FE1EE750920 /* Pods_EggTimerMVVM_EggTimerMVVMUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +75,9 @@
 		F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Hero.swift"; sourceTree = "<group>"; };
 		F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomImages.swift"; sourceTree = "<group>"; };
+		F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFonts.swift"; sourceTree = "<group>"; };
+		F48CF4292877563C001E7FD6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F48CF42B28776F96001E7FD6 /* EggModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggModel.swift; sourceTree = "<group>"; };
 		FB6B9DF4E1A21020FBCF0D8D /* Pods-EggTimerMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerMVVM.release.xcconfig"; path = "Target Support Files/Pods-EggTimerMVVM/Pods-EggTimerMVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +157,7 @@
 		F44CAB2A2877426D005C1376 /* EggTimerMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				F48CF41E28774FC3001E7FD6 /* Extensions */,
+				F48CF42728775616001E7FD6 /* Core */,
 				F44CAB5F28774340005C1376 /* Storyboards */,
 				F44CAB5E2877431B005C1376 /* Views */,
 				F44CAB5D287742A1005C1376 /* ViewModels */,
@@ -192,6 +198,7 @@
 		F44CAB5C28774290005C1376 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F48CF42B28776F96001E7FD6 /* EggModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,8 +236,26 @@
 				F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */,
 				F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */,
 				F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */,
+				F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F48CF42728775616001E7FD6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F48CF4282877561D001E7FD6 /* Utilities */,
+				F48CF41E28774FC3001E7FD6 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F48CF4282877561D001E7FD6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F48CF4292877563C001E7FD6 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,11 +498,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
+				F48CF42A2877563C001E7FD6 /* Constants.swift in Sources */,
 				F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */,
 				F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */,
 				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
+				F48CF42C28776F96001E7FD6 /* EggModel.swift in Sources */,
 				F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */,
 				F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */,
+				F48CF426287754B3001E7FD6 /* UIFont+CustomFonts.swift in Sources */,
 				F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */,
 				F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */,
 				F44CAB612877442D005C1376 /* HomeViewController.swift in Sources */,
