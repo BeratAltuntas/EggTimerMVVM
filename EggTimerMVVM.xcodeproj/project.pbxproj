@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		451A71EE146C89C0364146BD /* Pods_EggTimerMVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C606B41EDE34125FE3ECCB37 /* Pods_EggTimerMVVMTests.framework */; };
 		5E8D637940E1C8CEDFB9E9C7 /* Pods_EggTimerMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA4E6DB73282BAE102F250C /* Pods_EggTimerMVVM.framework */; };
+		F40D286D2878A4BD009E0BB6 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40D286C2878A4BD009E0BB6 /* Int+Extension.swift */; };
 		F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB2B2877426D005C1376 /* AppDelegate.swift */; };
 		F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB2D2877426D005C1376 /* SceneDelegate.swift */; };
 		F44CAB332877426D005C1376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44CAB312877426D005C1376 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		A5E547B408BFED7EA9B49B86 /* Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-EggTimerMVVM-EggTimerMVVMUITests/Pods-EggTimerMVVM-EggTimerMVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C02AE413910AE7449E8B6C0E /* Pods-EggTimerMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimerMVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-EggTimerMVVMTests/Pods-EggTimerMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C606B41EDE34125FE3ECCB37 /* Pods_EggTimerMVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimerMVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40D286C2878A4BD009E0BB6 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		F44CAB282877426D005C1376 /* EggTimerMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimerMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44CAB2B2877426D005C1376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F44CAB2D2877426D005C1376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */,
 				F48CF425287754B3001E7FD6 /* UIFont+CustomFonts.swift */,
 				F48CF43028777682001E7FD6 /* Date+CustomDates.swift */,
+				F40D286C2878A4BD009E0BB6 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			files = (
 				F44CAB2C2877426D005C1376 /* AppDelegate.swift in Sources */,
 				F48CF42A2877563C001E7FD6 /* Constants.swift in Sources */,
+				F40D286D2878A4BD009E0BB6 /* Int+Extension.swift in Sources */,
 				F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */,
 				F48CF42F28777591001E7FD6 /* UserDefaultsManager.swift in Sources */,
 				F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */,

@@ -31,5 +31,11 @@ enum ImageSizes {
 
 enum ViewControllersConstants {
     static let eggDetailPageIdentifier = "EggDetailViewController"
-    static let images: [UIImage] = [.egg1, .egg2, .egg3, .egg4]
+    static let verticalSpaceSizeBetweenObjects: CGFloat = 58
+}
+
+enum EggAttiributes {
+    static let eggImages: [UIImage] = [.egg1, .egg2, .egg3, .egg4]
+    static let eggNames: [String] = ["Soft", "Medium", "Hard", "Over"]
+    static let eggBoilMinutes: [Int] = [1, 7, 10, 12]
 }

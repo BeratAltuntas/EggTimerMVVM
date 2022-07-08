@@ -10,11 +10,14 @@ import Foundation
 // MARK: - EggDetailViewModelProtocol
 protocol EggDetailViewModelProtocol {
     var delegate: EggDetailViewModelDelegate! { get set }
+    
+    func SetupScreen()
 }
 
 // MARK: - EggDetailViewModelDelegate
 protocol EggDetailViewModelDelegate: AnyObject {
     
+    func LoadUI()
 }
 
 // MARK: - EggDetailViewModel
@@ -24,5 +27,7 @@ final class EggDetailViewModel {
 
 // MARK: - Extension: EggDetailViewModelProtocol
 extension EggDetailViewModel: EggDetailViewModelProtocol {
-    
+    func SetupScreen() {
+        delegate?.LoadUI()
+    }
 }

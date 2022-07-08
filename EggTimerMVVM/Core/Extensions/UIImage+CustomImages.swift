@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
+    // EGG Images
     static var egg1: UIImage {
         return UIImage(named: "egg-1")!
     }
@@ -20,5 +21,16 @@ extension UIImage {
     }
     static var egg4: UIImage {
         return UIImage(named: "egg-4")!
+    }
+    
+    // Button System Images
+    static var pause: UIImage {
+        return UIImage(systemName: "pause.fill")!
+    }
+    static var play: UIImage {
+        return UIImage(systemName: "play.fill")!
+    }
+    static var stop: UIImage {
+        return UIImage(systemName: "stop.fill")!
     }
 }

@@ -28,9 +28,9 @@ private let parameterRegex = "(?:\\-?\\d+(\\.?\\d+)?)|\\w+"
 private let modifiersRegex = "(\\w+)(?:\\(([^\\)]*)\\))?"
 
 internal extension NSObject {
-  func copyWithArchiver() -> Any? {
-    return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))!
-  }
+//  func copyWithArchiver() -> Any? {
+//    return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))!
+//  }
 }
 
 internal extension UIImage {

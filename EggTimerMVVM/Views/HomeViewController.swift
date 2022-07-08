@@ -23,7 +23,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         let VM = HomeViewModel()
         viewModel = VM
-        viewModel.SetupUI()
+        viewModel.SetupScreen()
     }
     
     private func SetupLabel() {
@@ -67,7 +67,7 @@ final class HomeViewController: UIViewController {
         for row in 0..<2 {
             for col in 0..<2 {
                 let imageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ImageTapped(tapGestureRecognizer:)))
-                let imageview = UIImageView(image: ViewControllersConstants.images[index])
+                let imageview = UIImageView(image: EggAttiributes.eggImages[index])
                 imageview.isUserInteractionEnabled = true
                 imageview.addGestureRecognizer(imageTapGestureRecognizer)
                 imageview.layer.masksToBounds = true
@@ -83,40 +83,20 @@ final class HomeViewController: UIViewController {
     
     private func PushView(withImageTag: Int) {
         
-        let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as! EggDetailViewController
-        let eggViewModel = EggDetailViewModel()
-        vc.viewModel = eggViewModel
-        showHero(vc,navigationAnimationType: .zoom)
-        
-        //        guard let withImageTag = withImageTag else { return }
-        //        let vc = storyboard?.instantiateViewController(withIdentifier: EggCountdownVCConstants.eggVCIndetifier) as! EggCountdownViewController
-        //        if UserDefaultsManager.shared.GetEggIsSet(),
-        //           let eggName = UserDefaultsManager.shared.GetLastEggName(),
-        //           let eggImagename = UserDefaultsManager.shared.GetLastEggImageName(),
-        //           let eggTime = UserDefaultsManager.shared.GetLastTickTime(),
-        //           let leftMin = UserDefaultsManager.shared.GetLeftMinute(),
-        //           let leftTotalSec = UserDefaultsManager.shared.GetLeftTotalSecond(),
-        //           let leftSec = UserDefaultsManager.shared.GetLeftSecond() {
-        //
-        //            vc.egg.eggIsSetBefore = true
-        //            vc.egg.eggImageName = eggImagename
-        //            vc.egg.eggName = eggName
-        //            vc.egg.eggBoilingTotalSecond = leftTotalSec
-        //            vc.egg.eggBoilingSecond = leftSec
-        //            vc.egg.eggBoilingMinute = leftMin
-        //
-        //            vc.lastTickedTime = eggTime
-        //
-        //        } else {
-        //            vc.egg.eggName = ViewConstants.eggNames[withImageTag]
-        //            vc.egg.eggImageName = ViewConstants.imageNames[withImageTag]
-        //            vc.egg.eggBoilingMinute = ViewConstants.eggBoilingTimes[withImageTag]
-        //            vc.egg.eggBoilingTotalSecond = ViewConstants.eggBoilingTimes[withImageTag] * 60
-        //            vc.egg.eggBoilingSecond = 0
-        //            vc.egg.eggIsSetBefore = false
-        //        }
-        //        navigationController?.pushViewController(vc,animated: true)
-        //    }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
+            let eggViewModel = EggDetailViewModel()
+            vc.viewModel = eggViewModel
+            
+            let tempEgg = EggModel(eggName: EggAttiributes.eggNames[withImageTag],
+                                   eggImage: EggAttiributes.eggImages[withImageTag],
+                                   eggBoilingMinute: EggAttiributes.eggBoilMinutes[withImageTag],
+                                   eggBoilingTotalSecond: EggAttiributes.eggBoilMinutes[withImageTag] * .totalSecondInOneMinute,
+                                   eggBoilingSecond: .zero,
+                                   eggIsSetBefore: false)
+            
+            vc.selectedEgg = tempEgg
+            showHero(vc,navigationAnimationType: .zoom)
+        }
     }
     
     @objc func ImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {

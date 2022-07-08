@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static var buttonColor: UIColor {
+    static var eggButtonColor: UIColor {
         return UIColor(named: "EggColor")!
     }
 }

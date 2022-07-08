@@ -23,7 +23,7 @@ final class UserDefaultsManager {
         let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
         
         ud.set(true, forKey: UserDefaultsManagerConstants.keyForIsSet)
-        ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
+        ud.set(egg.eggImage, forKey: UserDefaultsManagerConstants.keyForEggImageName)
         ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
         ud.set(time, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
     }
