@@ -63,7 +63,6 @@ final class HomeViewController: UIViewController {
         let height = ImageSizes.height
         let imageViewSpaces = ImageSizes.imageViewSpaces
         
-        
         for row in 0..<2 {
             for col in 0..<2 {
                 let imageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ImageTapped(tapGestureRecognizer:)))
@@ -82,7 +81,6 @@ final class HomeViewController: UIViewController {
     }
     
     private func PushView(withImageTag: Int) {
-        
         if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
             let eggViewModel = EggDetailViewModel()
             vc.viewModel = eggViewModel
@@ -90,7 +88,7 @@ final class HomeViewController: UIViewController {
             let tempEgg = EggModel(eggName: EggAttiributes.eggNames[withImageTag],
                                    eggImage: EggAttiributes.eggImages[withImageTag],
                                    eggBoilingMinute: EggAttiributes.eggBoilMinutes[withImageTag],
-                                   eggBoilingTotalSecond: EggAttiributes.eggBoilMinutes[withImageTag] * .totalSecondInOneMinute,
+                                   eggBoilingTotalSecond: EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute,
                                    eggBoilingSecond: .zero,
                                    eggIsSetBefore: false)
             
@@ -100,7 +98,6 @@ final class HomeViewController: UIViewController {
     }
     
     @objc func ImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        
         switch tapGestureRecognizer.view?.tag {
         case 0:
             PushView(withImageTag: 0)

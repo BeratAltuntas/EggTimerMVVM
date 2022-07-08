@@ -15,7 +15,7 @@ final class EggDetailViewController: UIViewController {
         }
     }
     
-    private var timer: Timer!
+    // UI Elements
     private var labelEggTitle: UILabel!
     private var labelCountdown: UILabel!
     private var imageView: UIImageView!
@@ -25,11 +25,33 @@ final class EggDetailViewController: UIViewController {
     private var pauseButton: UIButton!
     private var stopButton: UIButton!
     
+    // Egg CountDown Timer Variables
+    private var timer: Timer!
+    private var countDownEggBoilingTotalSecond: Int = .zero {
+        didSet {
+            countDownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
+        }
+    }
+    private var countDownTimerSecond: Int = .zero
+    private var countDownTimerMinute: Int = .zero
+    
     var selectedEgg: EggModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.SetupScreen()
+    }
+    
+    private func SetupUI() {
+        if selectedEgg.eggIsSetBefore {
+            //CalculateTime()
+            //            totalSecond = selectedEgg.eggBoilingTotalSecond
+            //            minute = selectedEgg.eggBoilingMinute
+            //            second = selectedEgg.eggBoilingSecond
+            Play_TUI(UIButton())
+        } else {
+            //totalSecond = egg.eggBoilingMinute * 60
+        }
     }
     
     private func SetupEggTitleLabel() {
@@ -130,17 +152,18 @@ final class EggDetailViewController: UIViewController {
             switch i {
             case 0:
                 button.addTarget(self, action: #selector(Stop_TUI(_:)), for: .touchUpInside)
-                button.isEnabled = false
+                button.isHidden = true
                 stopButton = button
                 
             case 1:
-                button.addTarget(self, action: #selector(Pause_TUI(_:)), for: .touchUpInside)
-                button.isEnabled = false
-                pauseButton = button
+                button.addTarget(self, action: #selector(Play_TUI(_:)), for: .touchUpInside)
+                button.isHidden = false
+                playButton = button
                 
             case 2:
-                button.addTarget(self, action: #selector(Play_TUI(_:)), for: .touchUpInside)
-                playButton = button
+                button.addTarget(self, action: #selector(Pause_TUI(_:)), for: .touchUpInside)
+                button.isHidden = true
+                pauseButton = button
                 
             default:
                 break
@@ -167,28 +190,62 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
-    private func SetupUI() {
-        if selectedEgg.eggIsSetBefore {
-            //CalculateTime()
-//            totalSecond = selectedEgg.eggBoilingTotalSecond
-//            minute = selectedEgg.eggBoilingMinute
-//            second = selectedEgg.eggBoilingSecond
-            Play_TUI(UIButton())
-        } else {
-            //totalSecond = egg.eggBoilingMinute * 60
+    private func SetupTimer() {
+        countDownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
+        countDownTimerSecond = selectedEgg.eggBoilingSecond
+        countDownTimerMinute = selectedEgg.eggBoilingMinute
+        StartTimer()
+    }
+    
+    private func StartTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1.toDouble(), target: self, selector: #selector(TimerTick), userInfo: nil, repeats: true)
+    }
+    
+    private func StopTimer() {
+        timer.invalidate()
+    }
+    
+    @objc private func TimerTick() {
+        countDownEggBoilingTotalSecond -= 1
+        countDownTimerSecond -= 1
+        
+        if countDownTimerSecond <= 0 {
+            countDownTimerSecond = .secondInOneMinute
+        }
+        
+        if countDownTimerSecond <= 0 || countDownTimerMinute < 0 || countDownEggBoilingTotalSecond <= 0 {
+            Stop_TUI(UIButton())
+            StopTimer()
         }
     }
     
     @objc private func Stop_TUI(_ sender: UIButton) {
-        
+        //StopTimer()
+        //timer = nil
+        playButton.isEnabled = true
+        playButton.isHidden = false
+        pauseButton.isHidden = true
+        stopButton.isHidden = true
     }
     
     @objc private func Pause_TUI(_ sender: UIButton) {
-        
+        //StopTimer()
+        playButton.isEnabled = true
+        pauseButton.isEnabled = false
+        stopButton.isEnabled = true
     }
     
     @objc private func Play_TUI(_ sender: UIButton) {
-        
+        if timer == nil {
+            SetupTimer()
+        } else {
+            StartTimer()
+        }
+        playButton.isEnabled = false
+        pauseButton.isEnabled = true
+        pauseButton.isHidden = false
+        stopButton.isHidden = false
+        stopButton.isEnabled = true
     }
     
     @objc private func ApplicationResigned() {

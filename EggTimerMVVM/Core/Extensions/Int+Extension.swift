@@ -9,7 +9,11 @@ import Foundation
 import CoreGraphics
 
 extension Int {
-    static let totalSecondInOneMinute = 60
+    static let secondInOneMinute = 60
+    
+    func toDouble()-> Double {
+        return Double(self)
+    }
     
     func toCGFloat()-> CGFloat {
         return CGFloat(self)
