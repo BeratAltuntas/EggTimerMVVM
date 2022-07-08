@@ -27,13 +27,14 @@ final class EggDetailViewController: UIViewController {
     
     // Egg CountDown Timer Variables
     private var timer: Timer!
-    private var countDownEggBoilingTotalSecond: Int = .zero {
+    private var countdownEggBoilingTotalSecond: Int = .zero {
         didSet {
-            countDownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
+            countdownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
         }
     }
-    private var countDownTimerSecond: Int = .zero
-    private var countDownTimerMinute: Int = .zero
+    private var countdownTimerSecond: Int = .zero
+    private var countdownTimerMinute: Int = .zero
+    private var labelColonsShow: Bool = true
     
     var selectedEgg: EggModel!
     
@@ -83,25 +84,6 @@ final class EggDetailViewController: UIViewController {
         ])
     }
     
-    private func SetupCountdownLabel() {
-        labelCountdown = UILabel()
-        labelCountdown.textColor = .black
-        if Double(selectedEgg.eggBoilingMinute) / 10.0 >= 1.0 {
-            labelCountdown.text = "\(selectedEgg.eggBoilingMinute) : \(selectedEgg.eggBoilingSecond)"
-        } else {
-            labelCountdown.text = "0\(selectedEgg.eggBoilingMinute) : \(selectedEgg.eggBoilingSecond)"
-        }
-        
-        labelCountdown.font = .HelveticaNeue(size: 50)
-        labelCountdown.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(labelCountdown)
-        
-        NSLayoutConstraint.activate([
-            labelCountdown.topAnchor.constraint(equalTo: imageView.layoutMarginsGuide.bottomAnchor, constant: ViewControllersConstants.verticalSpaceSizeBetweenObjects),
-            labelCountdown.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
-    }
-    
     private func SetupSliderBar() {
         sliderCountdown = UISlider()
         sliderCountdown.tintColor = .eggButtonColor
@@ -117,6 +99,51 @@ final class EggDetailViewController: UIViewController {
             sliderCountdown.widthAnchor.constraint(equalToConstant: view.frame.width/1.2),
             sliderCountdown.heightAnchor.constraint(equalToConstant: 44)
         ])
+    }
+    
+    private func UpdateSliderBar() {
+        DispatchQueue.main.async {[weak self] in
+            self?.sliderCountdown.value = self!.countdownEggBoilingTotalSecond.toFloat()
+        }
+    }
+    
+    private func SetupCountdownLabel() {
+        labelCountdown = UILabel()
+        labelCountdown.textColor = .black
+        labelCountdown.font = .HelveticaNeue(size: 50)
+        labelCountdown.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(labelCountdown)
+        
+        NSLayoutConstraint.activate([
+            labelCountdown.topAnchor.constraint(equalTo: imageView.layoutMarginsGuide.bottomAnchor, constant: ViewControllersConstants.verticalSpaceSizeBetweenObjects),
+            labelCountdown.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+    
+    private func UpdateCountdownLabel() {
+        DispatchQueue.main.async { [weak self] in
+            var minString: String
+            var secString: String
+            if self!.countdownTimerMinute / 10 > 0 {
+                minString = "\(self!.countdownTimerMinute)"
+            } else {
+                minString = "0\(self!.countdownTimerMinute)"
+            }
+            
+            if self!.countdownTimerSecond / 10 > 0 {
+                secString = "\(self!.countdownTimerSecond)"
+            } else {
+                secString = "0\(self!.countdownTimerSecond)"
+            }
+            
+            if self!.labelColonsShow {
+                self?.labelCountdown.text = "\(minString) : \(secString)"
+                self?.labelColonsShow = false
+            } else {
+                self?.labelCountdown.text = "\(minString)   \(secString)"
+                self?.labelColonsShow = true
+            }
+        }
     }
     
     private func SetupButtons() {
@@ -190,10 +217,14 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
+    private func LoadTimerAttiributes() {
+        countdownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
+        countdownTimerSecond = selectedEgg.eggBoilingSecond
+        countdownTimerMinute = selectedEgg.eggBoilingMinute
+    }
+    
     private func SetupTimer() {
-        countDownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
-        countDownTimerSecond = selectedEgg.eggBoilingSecond
-        countDownTimerMinute = selectedEgg.eggBoilingMinute
+        LoadTimerAttiributes()
         StartTimer()
     }
     
@@ -206,22 +237,29 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func TimerTick() {
-        countDownEggBoilingTotalSecond -= 1
-        countDownTimerSecond -= 1
+        countdownEggBoilingTotalSecond -= 1
+        countdownTimerSecond -= 1
         
-        if countDownTimerSecond <= 0 {
-            countDownTimerSecond = .secondInOneMinute
+        if countdownTimerSecond <= 0 {
+            countdownTimerSecond = .secondInOneMinute - 1
+            countdownTimerMinute -= 1
         }
         
-        if countDownTimerSecond <= 0 || countDownTimerMinute < 0 || countDownEggBoilingTotalSecond <= 0 {
+        if countdownTimerSecond <= 0 || countdownTimerMinute < 0 || countdownEggBoilingTotalSecond <= 0 {
             Stop_TUI(UIButton())
             StopTimer()
         }
+        UpdateSliderBar()
+        UpdateCountdownLabel()
     }
     
     @objc private func Stop_TUI(_ sender: UIButton) {
-        //StopTimer()
-        //timer = nil
+        StopTimer()
+        LoadTimerAttiributes()
+        UpdateSliderBar()
+        UpdateCountdownLabel()
+        
+        timer = nil
         playButton.isEnabled = true
         playButton.isHidden = false
         pauseButton.isHidden = true
@@ -229,7 +267,7 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func Pause_TUI(_ sender: UIButton) {
-        //StopTimer()
+        StopTimer()
         playButton.isEnabled = true
         pauseButton.isEnabled = false
         stopButton.isEnabled = true
@@ -263,5 +301,8 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
         SetupCountdownLabel()
         SetupSliderBar()
         SetupButtons()
+        LoadTimerAttiributes()
+        UpdateSliderBar()
+        UpdateCountdownLabel()
     }
 }
