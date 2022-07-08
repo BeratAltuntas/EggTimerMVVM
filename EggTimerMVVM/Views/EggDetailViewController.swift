@@ -26,14 +26,6 @@ final class EggDetailViewController: UIViewController {
     private var stopButton: UIButton!
     
     // Egg CountDown Timer Variables
-    private var timer: Timer!
-    private var countdownEggBoilingTotalSecond: Int = .zero {
-        didSet {
-            countdownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
-        }
-    }
-    private var countdownTimerSecond: Int = .zero
-    private var countdownTimerMinute: Int = .zero
     private var labelColonsShow: Bool = true
     
     var selectedEgg: EggModel!
@@ -101,12 +93,6 @@ final class EggDetailViewController: UIViewController {
         ])
     }
     
-    private func UpdateSliderBar() {
-        DispatchQueue.main.async {[weak self] in
-            self?.sliderCountdown.value = self!.countdownEggBoilingTotalSecond.toFloat()
-        }
-    }
-    
     private func SetupCountdownLabel() {
         labelCountdown = UILabel()
         labelCountdown.textColor = .black
@@ -118,32 +104,6 @@ final class EggDetailViewController: UIViewController {
             labelCountdown.topAnchor.constraint(equalTo: imageView.layoutMarginsGuide.bottomAnchor, constant: ViewControllersConstants.verticalSpaceSizeBetweenObjects),
             labelCountdown.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-    }
-    
-    private func UpdateCountdownLabel() {
-        DispatchQueue.main.async { [weak self] in
-            var minString: String
-            var secString: String
-            if self!.countdownTimerMinute / 10 > 0 {
-                minString = "\(self!.countdownTimerMinute)"
-            } else {
-                minString = "0\(self!.countdownTimerMinute)"
-            }
-            
-            if self!.countdownTimerSecond / 10 > 0 {
-                secString = "\(self!.countdownTimerSecond)"
-            } else {
-                secString = "0\(self!.countdownTimerSecond)"
-            }
-            
-            if self!.labelColonsShow {
-                self?.labelCountdown.text = "\(minString) : \(secString)"
-                self?.labelColonsShow = false
-            } else {
-                self?.labelCountdown.text = "\(minString)   \(secString)"
-                self?.labelColonsShow = true
-            }
-        }
     }
     
     private func SetupButtons() {
@@ -217,49 +177,26 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
-    private func LoadTimerAttiributes() {
-        countdownEggBoilingTotalSecond = selectedEgg.eggBoilingTotalSecond
-        countdownTimerSecond = selectedEgg.eggBoilingSecond
-        countdownTimerMinute = selectedEgg.eggBoilingMinute
-    }
-    
     private func SetupTimer() {
-        LoadTimerAttiributes()
-        StartTimer()
+        viewModel.LoadTimerAttiributes()
+        viewModel.StartTimer()
     }
     
     private func StartTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.toDouble(), target: self, selector: #selector(TimerTick), userInfo: nil, repeats: true)
+        viewModel.StartTimer()
     }
     
     private func StopTimer() {
-        timer.invalidate()
-    }
-    
-    @objc private func TimerTick() {
-        countdownEggBoilingTotalSecond -= 1
-        countdownTimerSecond -= 1
-        
-        if countdownTimerSecond <= 0 {
-            countdownTimerSecond = .secondInOneMinute - 1
-            countdownTimerMinute -= 1
-        }
-        
-        if countdownTimerSecond <= 0 || countdownTimerMinute < 0 || countdownEggBoilingTotalSecond <= 0 {
-            Stop_TUI(UIButton())
-            StopTimer()
-        }
-        UpdateSliderBar()
-        UpdateCountdownLabel()
+        viewModel.StopTimer()
     }
     
     @objc private func Stop_TUI(_ sender: UIButton) {
         StopTimer()
-        LoadTimerAttiributes()
+        viewModel.LoadTimerAttiributes()
         UpdateSliderBar()
         UpdateCountdownLabel()
         
-        timer = nil
+        viewModel.timer = nil
         playButton.isEnabled = true
         playButton.isHidden = false
         pauseButton.isHidden = true
@@ -274,10 +211,10 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func Play_TUI(_ sender: UIButton) {
-        if timer == nil {
+        if viewModel.timer == nil {
             SetupTimer()
         } else {
-            StartTimer()
+            viewModel.StartTimer()
         }
         playButton.isEnabled = false
         pauseButton.isEnabled = true
@@ -293,6 +230,10 @@ final class EggDetailViewController: UIViewController {
 
 // MARK: - Extension: EggDetailViewModelDelegate
 extension EggDetailViewController: EggDetailViewModelDelegate {
+    var selectedEggVM: EggModel! {
+        return self.selectedEgg
+    }
+    
     func LoadUI() {
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationResigned), name: UIApplication.didEnterBackgroundNotification, object: nil)
         view.backgroundColor = .white
@@ -301,8 +242,40 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
         SetupCountdownLabel()
         SetupSliderBar()
         SetupButtons()
-        LoadTimerAttiributes()
+        viewModel.LoadTimerAttiributes()
         UpdateSliderBar()
         UpdateCountdownLabel()
+    }
+    
+    func UpdateSliderBar() {
+        DispatchQueue.main.async {[weak self] in
+            self?.sliderCountdown.value = self!.viewModel.countdownEggBoilingTotalSecond.toFloat()
+        }
+    }
+    
+    func UpdateCountdownLabel() {
+        DispatchQueue.main.async { [weak self] in
+            var minString: String
+            var secString: String
+            if self!.viewModel.countdownTimerMinute / 10 > 0 {
+                minString = "\(self!.viewModel.countdownTimerMinute)"
+            } else {
+                minString = "0\(self!.viewModel.countdownTimerMinute)"
+            }
+            
+            if self!.viewModel.countdownTimerSecond / 10 > 0 {
+                secString = "\(self!.viewModel.countdownTimerSecond)"
+            } else {
+                secString = "0\(self!.viewModel.countdownTimerSecond)"
+            }
+            
+            if self!.labelColonsShow {
+                self?.labelCountdown.text = "\(minString) : \(secString)"
+                self?.labelColonsShow = false
+            } else {
+                self?.labelCountdown.text = "\(minString)   \(secString)"
+                self?.labelColonsShow = true
+            }
+        }
     }
 }
