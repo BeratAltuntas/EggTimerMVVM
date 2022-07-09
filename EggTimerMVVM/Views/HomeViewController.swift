@@ -93,7 +93,7 @@ final class HomeViewController: UIViewController {
                                    eggIsSetBefore: false)
             
             vc.selectedEgg = tempEgg
-            showHero(vc,navigationAnimationType: .zoom)
+            showHero(vc,navigationAnimationType: .zoomOut)
         }
     }
     

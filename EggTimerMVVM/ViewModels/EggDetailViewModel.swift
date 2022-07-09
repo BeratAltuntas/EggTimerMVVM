@@ -27,6 +27,8 @@ protocol EggDetailViewModelDelegate: AnyObject {
     func LoadUI()
     func UpdateCountdownLabel()
     func UpdateSliderBar()
+    func ShowAlertView()
+    func Stop_TUI()
 }
 
 // MARK: - EggDetailViewModel
@@ -36,11 +38,7 @@ final class EggDetailViewModel {
     
     var countdownTimerSecond: Int = .zero
     var countdownTimerMinute: Int = .zero
-    var countdownEggBoilingTotalSecond: Int = .zero {
-        didSet {
-            countdownEggBoilingTotalSecond = delegate!.selectedEggVM.eggBoilingTotalSecond
-        }
-    }
+    var countdownEggBoilingTotalSecond: Int = .zero
 
     @objc private func TimerTick() {
         countdownEggBoilingTotalSecond -= 1
@@ -52,8 +50,8 @@ final class EggDetailViewModel {
         }
         
         if countdownTimerSecond <= 0 || countdownTimerMinute < 0 || countdownEggBoilingTotalSecond <= 0 {
-            //Stop_TUI(UIButton())
-            StopTimer()
+            delegate?.Stop_TUI()
+            delegate?.ShowAlertView()
         }
         delegate?.UpdateSliderBar()
         delegate?.UpdateCountdownLabel()

@@ -41,7 +41,7 @@ final class EggDetailViewController: UIViewController {
             //            totalSecond = selectedEgg.eggBoilingTotalSecond
             //            minute = selectedEgg.eggBoilingMinute
             //            second = selectedEgg.eggBoilingSecond
-            Play_TUI(UIButton())
+            Play_TUI()
         } else {
             //totalSecond = egg.eggBoilingMinute * 60
         }
@@ -138,17 +138,17 @@ final class EggDetailViewController: UIViewController {
             button.translatesAutoresizingMaskIntoConstraints = false
             switch i {
             case 0:
-                button.addTarget(self, action: #selector(Stop_TUI(_:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(Stop_TUI), for: .touchUpInside)
                 button.isHidden = true
                 stopButton = button
                 
             case 1:
-                button.addTarget(self, action: #selector(Play_TUI(_:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(Play_TUI), for: .touchUpInside)
                 button.isHidden = false
                 playButton = button
                 
             case 2:
-                button.addTarget(self, action: #selector(Pause_TUI(_:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(Pause_TUI), for: .touchUpInside)
                 button.isHidden = true
                 pauseButton = button
                 
@@ -177,6 +177,20 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
+    private func CreatePushAlert() {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.sound = .defaultCritical
+        notificationContent.title = "Egg Is Boiled."
+        notificationContent.body = "The egg is boiled. Take from the stove."
+        let whenIsTriggering = UNTimeIntervalNotificationTrigger(timeInterval: selectedEgg.eggBoilingTotalSecond.toDouble(), repeats: false)
+        let notification = UNNotificationRequest(identifier: ViewControllersConstants.eggPushNotificationIdentifier, content: notificationContent, trigger: whenIsTriggering)
+        UNUserNotificationCenter.current().add(notification)
+    }
+    
+    private func DestroyPushAlerts() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
+    
     private func LoadTimerAttiributes() {
         viewModel.LoadTimerAttiributes()
     }
@@ -195,27 +209,14 @@ final class EggDetailViewController: UIViewController {
         viewModel.StopTimer()
     }
     
-    @objc private func Stop_TUI(_ sender: UIButton) {
-        StopTimer()
-        LoadTimerAttiributes()
-        UpdateSliderBar()
-        UpdateCountdownLabel()
-        
-        viewModel.timer = nil
-        playButton.isEnabled = true
-        playButton.isHidden = false
-        pauseButton.isHidden = true
-        stopButton.isHidden = true
-    }
-    
-    @objc private func Pause_TUI(_ sender: UIButton) {
+    @objc private func Pause_TUI() {
         StopTimer()
         playButton.isEnabled = true
         pauseButton.isEnabled = false
         stopButton.isEnabled = true
     }
     
-    @objc private func Play_TUI(_ sender: UIButton) {
+    @objc private func Play_TUI() {
         if viewModel.timer == nil {
             SetupTimer()
         } else {
@@ -226,6 +227,7 @@ final class EggDetailViewController: UIViewController {
         pauseButton.isHidden = false
         stopButton.isHidden = false
         stopButton.isEnabled = true
+        CreatePushAlert()
     }
     
     @objc private func ApplicationResigned() {
@@ -235,6 +237,7 @@ final class EggDetailViewController: UIViewController {
 
 // MARK: - Extension: EggDetailViewModelDelegate
 extension EggDetailViewController: EggDetailViewModelDelegate {
+    
     var selectedEggVM: EggModel! {
         return self.selectedEgg
     }
@@ -282,5 +285,29 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
                 self?.labelColonsShow = true
             }
         }
+    }
+    
+    func ShowAlertView() {
+        DispatchQueue.main.async {
+            let ac = UIAlertController(title: "Egg Is Boiled", message: "The egg is boiled. Take from the stove.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] action in
+                self?.hero.dismissViewController()
+            }))
+            self.present(ac, animated: true)
+        }
+    }
+    
+    @objc func Stop_TUI() {
+        StopTimer()
+        DestroyPushAlerts()
+        LoadTimerAttiributes()
+        UpdateSliderBar()
+        UpdateCountdownLabel()
+        
+        viewModel.timer = nil
+        playButton.isEnabled = true
+        playButton.isHidden = false
+        pauseButton.isHidden = true
+        stopButton.isHidden = true
     }
 }

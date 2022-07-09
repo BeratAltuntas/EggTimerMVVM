@@ -30,7 +30,9 @@ enum ImageSizes {
 }
 
 enum ViewControllersConstants {
+    static let homePageIdentifier = "HomeViewController"
     static let eggDetailPageIdentifier = "EggDetailViewController"
+    static let eggPushNotificationIdentifier = "EggPushNotification"
     static let verticalSpaceSizeBetweenObjects: CGFloat = 58
 }
 
