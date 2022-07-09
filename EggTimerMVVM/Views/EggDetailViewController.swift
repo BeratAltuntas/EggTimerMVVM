@@ -177,9 +177,13 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
-    private func SetupTimer() {
+    private func LoadTimerAttiributes() {
         viewModel.LoadTimerAttiributes()
-        viewModel.StartTimer()
+    }
+    
+    private func SetupTimer() {
+        LoadTimerAttiributes()
+        StartTimer()
     }
     
     private func StartTimer() {
@@ -187,12 +191,13 @@ final class EggDetailViewController: UIViewController {
     }
     
     private func StopTimer() {
+        labelColonsShow = true
         viewModel.StopTimer()
     }
     
     @objc private func Stop_TUI(_ sender: UIButton) {
         StopTimer()
-        viewModel.LoadTimerAttiributes()
+        LoadTimerAttiributes()
         UpdateSliderBar()
         UpdateCountdownLabel()
         
@@ -214,7 +219,7 @@ final class EggDetailViewController: UIViewController {
         if viewModel.timer == nil {
             SetupTimer()
         } else {
-            viewModel.StartTimer()
+            StartTimer()
         }
         playButton.isEnabled = false
         pauseButton.isEnabled = true
@@ -242,9 +247,9 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
         SetupCountdownLabel()
         SetupSliderBar()
         SetupButtons()
-        viewModel.LoadTimerAttiributes()
-        UpdateSliderBar()
+        LoadTimerAttiributes()
         UpdateCountdownLabel()
+        UpdateSliderBar()
     }
     
     func UpdateSliderBar() {

@@ -10,11 +10,10 @@ import Foundation
 // MARK: - EggDetailViewModelProtocol
 protocol EggDetailViewModelProtocol {
     var delegate: EggDetailViewModelDelegate! { get set }
-    var timer: Timer! { get set }
-    var countdownEggBoilingTotalSecond: Int { get set }
-    var countdownTimerSecond: Int { get set }
-    var countdownTimerMinute: Int { get set }
-    
+    var timer: Timer! { get }
+    var countdownEggBoilingTotalSecond: Int { get }
+    var countdownTimerSecond: Int { get }
+    var countdownTimerMinute: Int { get }
     
     func SetupScreen()
     func StartTimer()
@@ -35,17 +34,14 @@ final class EggDetailViewModel {
     weak var delegate: EggDetailViewModelDelegate!
     var timer: Timer!
     
+    var countdownTimerSecond: Int = .zero
+    var countdownTimerMinute: Int = .zero
     var countdownEggBoilingTotalSecond: Int = .zero {
         didSet {
             countdownEggBoilingTotalSecond = delegate!.selectedEggVM.eggBoilingTotalSecond
         }
     }
-    var countdownTimerSecond: Int = .zero
-    var countdownTimerMinute: Int = .zero
-    
-    
-    
-    
+
     @objc private func TimerTick() {
         countdownEggBoilingTotalSecond -= 1
         countdownTimerSecond -= 1
