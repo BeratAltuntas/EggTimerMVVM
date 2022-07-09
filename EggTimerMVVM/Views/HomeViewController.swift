@@ -24,6 +24,10 @@ final class HomeViewController: UIViewController {
         let VM = HomeViewModel()
         viewModel = VM
         viewModel.SetupScreen()
+        
+        if UserDefaultsManager.shared.EggIsSet() {
+            PushView(withImageTag: 0)
+        }
     }
     
     private func SetupLabel() {
@@ -66,7 +70,7 @@ final class HomeViewController: UIViewController {
         for row in 0..<2 {
             for col in 0..<2 {
                 let imageTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ImageTapped(tapGestureRecognizer:)))
-                let imageview = UIImageView(image: EggAttiributes.eggImages[index])
+                let imageview = UIImageView(image: UIImage(named: EggAttiributes.eggImageNames[index]))
                 imageview.isUserInteractionEnabled = true
                 imageview.addGestureRecognizer(imageTapGestureRecognizer)
                 imageview.layer.masksToBounds = true
@@ -85,12 +89,25 @@ final class HomeViewController: UIViewController {
             let eggViewModel = EggDetailViewModel()
             vc.viewModel = eggViewModel
             
-            let tempEgg = EggModel(eggName: EggAttiributes.eggNames[withImageTag],
-                                   eggImage: EggAttiributes.eggImages[withImageTag],
-                                   eggBoilingMinute: EggAttiributes.eggBoilMinutes[withImageTag],
-                                   eggBoilingTotalSecond: EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute,
-                                   eggBoilingSecond: .zero,
-                                   eggIsSetBefore: false)
+            var tempEgg = EggModel()
+            tempEgg.eggName = EggAttiributes.eggNames[withImageTag]
+            tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
+            tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
+            tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
+            tempEgg.eggBoilingSecond = .zero
+            
+            if UserDefaultsManager.shared.EggIsSet(),
+               let eggName = UserDefaultsManager.shared.GetLastEggName(),
+               let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
+               let totalMin = UserDefaultsManager.shared.GetEggTotalMinute(),
+               let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
+                
+                tempEgg.eggName = eggName
+                tempEgg.eggImageName = eggImageName
+                tempEgg.eggBoilingMinute = totalMin
+                tempEgg.eggLastEnteredTime = lastEnteredTime
+                tempEgg.eggIsSetBefore = true
+            }
             
             vc.selectedEgg = tempEgg
             showHero(vc,navigationAnimationType: .zoomOut)

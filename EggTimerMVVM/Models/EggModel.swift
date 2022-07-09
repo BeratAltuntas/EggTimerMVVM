@@ -11,33 +11,37 @@ import UIKit
 // MARK: - EggModel
 struct EggModel {
     var eggName: String
-    var eggImage: UIImage
+    var eggImageName: String
     var eggBoilingMinute: Int
     var eggBoilingTotalSecond: Int
     var eggBoilingSecond: Int
+    var eggLastEnteredTime: String
     var eggIsSetBefore: Bool
     
     init() {
         eggName = ""
-        eggImage = UIImage()
+        eggImageName = ""
         eggBoilingTotalSecond = 0
         eggBoilingMinute = 0
         eggBoilingSecond = 0
+        eggLastEnteredTime = ""
         eggIsSetBefore = false
     }
     
     init(eggName: String,
-         eggImage: UIImage,
+         eggImage: String,
          eggBoilingMinute: Int,
          eggBoilingTotalSecond: Int,
          eggBoilingSecond: Int,
+         eggLastEnteredTime: String,
          eggIsSetBefore: Bool) {
         
         self.eggName = eggName
-        self.eggImage = eggImage
+        self.eggImageName = eggImage
         self.eggBoilingMinute = eggBoilingMinute
         self.eggBoilingTotalSecond = eggBoilingTotalSecond
         self.eggBoilingSecond = eggBoilingSecond
+        self.eggLastEnteredTime = eggLastEnteredTime
         self.eggIsSetBefore = eggIsSetBefore
     }
     

@@ -13,6 +13,7 @@ final class UserDefaultsManager {
         static let keyForIsSet = "EggIsSet"
         static let keyForEggName = "EggName"
         static let keyForEggImageName = "EggImageName"
+        static let keyForEggTotalMinute = "EggTotalMinute"
         static let keyForLastEnteredTime = "EggLastEnteredTime"
     }
     
@@ -20,12 +21,13 @@ final class UserDefaultsManager {
     private let ud = UserDefaults.standard
     
     func SetLastTickTime(egg: EggModel) {
-        let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
+       
         
         ud.set(true, forKey: UserDefaultsManagerConstants.keyForIsSet)
-        ud.set(egg.eggImage, forKey: UserDefaultsManagerConstants.keyForEggImageName)
+        ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
         ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
-        ud.set(time, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
+        ud.set(egg.eggBoilingMinute, forKey: UserDefaultsManagerConstants.keyForEggTotalMinute)
+        ud.set(egg.eggLastEnteredTime, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
     }
     
     func EggIsSet()->Bool {
@@ -38,6 +40,10 @@ final class UserDefaultsManager {
     
     func GetLastEggImageName()-> String? {
         return ud.string(forKey: UserDefaultsManagerConstants.keyForEggImageName)
+    }
+    
+    func GetEggTotalMinute()-> Int? {
+        return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalMinute)
     }
     
     func GetLastEnteredTime()-> String? {

@@ -35,15 +35,11 @@ final class EggDetailViewController: UIViewController {
         viewModel.SetupScreen()
     }
     
-    private func SetupUI() {
-        if selectedEgg.eggIsSetBefore {
-            //CalculateTime()
-            //            totalSecond = selectedEgg.eggBoilingTotalSecond
-            //            minute = selectedEgg.eggBoilingMinute
-            //            second = selectedEgg.eggBoilingSecond
-            Play_TUI()
-        } else {
-            //totalSecond = egg.eggBoilingMinute * 60
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UserDefaultsManager.shared.RemoveAllItems()
+        if viewModel.timer != nil {
+            Stop_TUI()
         }
     }
     
@@ -62,7 +58,7 @@ final class EggDetailViewController: UIViewController {
     }
     
     private func SetupImageView() {
-        imageView = UIImageView(image: selectedEgg.eggImage)
+        imageView = UIImageView(image: UIImage(named: selectedEgg.eggImageName))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.frame.width/4.0
@@ -179,7 +175,7 @@ final class EggDetailViewController: UIViewController {
     
     private func CreatePushAlert() {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.sound = .defaultCritical
+        notificationContent.sound = .defaultRingtone
         notificationContent.title = "Egg Is Boiled."
         notificationContent.body = "The egg is boiled. Take from the stove."
         let whenIsTriggering = UNTimeIntervalNotificationTrigger(timeInterval: selectedEgg.eggBoilingTotalSecond.toDouble(), repeats: false)
@@ -230,8 +226,22 @@ final class EggDetailViewController: UIViewController {
         CreatePushAlert()
     }
     
-    @objc private func ApplicationResigned() {
+    @objc func Stop_TUI() {
+        StopTimer()
+        DestroyPushAlerts()
+        LoadTimerAttiributes()
+        UpdateSliderBar()
+        UpdateCountdownLabel()
         
+        viewModel.timer = nil
+        playButton.isEnabled = true
+        playButton.isHidden = false
+        pauseButton.isHidden = true
+        stopButton.isHidden = true
+    }
+    
+    @objc private func ApplicationResigned() {
+        viewModel.ApplicationResign()
     }
 }
 
@@ -239,7 +249,13 @@ final class EggDetailViewController: UIViewController {
 extension EggDetailViewController: EggDetailViewModelDelegate {
     
     var selectedEggVM: EggModel! {
-        return self.selectedEgg
+        get {
+            return self.selectedEgg
+        }
+        
+        set {
+            self.selectedEgg = newValue
+        }
     }
     
     func LoadUI() {
@@ -250,6 +266,9 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
         SetupCountdownLabel()
         SetupSliderBar()
         SetupButtons()
+        if selectedEgg.eggIsSetBefore {
+            viewModel.CalculateTime()
+        }
         LoadTimerAttiributes()
         UpdateCountdownLabel()
         UpdateSliderBar()
@@ -263,18 +282,21 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
     
     func UpdateCountdownLabel() {
         DispatchQueue.main.async { [weak self] in
+            guard let timerMin = self?.viewModel.countdownTimerMinute else { return }
+            guard let timerSec = self?.viewModel.countdownTimerSecond else { return }
             var minString: String
             var secString: String
-            if self!.viewModel.countdownTimerMinute / 10 > 0 {
-                minString = "\(self!.viewModel.countdownTimerMinute)"
+            
+            if timerMin / 10 > 0 {
+                minString = "\(timerMin)"
             } else {
-                minString = "0\(self!.viewModel.countdownTimerMinute)"
+                minString = "0\(timerMin)"
             }
             
-            if self!.viewModel.countdownTimerSecond / 10 > 0 {
-                secString = "\(self!.viewModel.countdownTimerSecond)"
+            if timerSec / 10 > 0 {
+                secString = "\(timerSec)"
             } else {
-                secString = "0\(self!.viewModel.countdownTimerSecond)"
+                secString = "0\(timerSec)"
             }
             
             if self!.labelColonsShow {
@@ -297,17 +319,11 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
         }
     }
     
-    @objc func Stop_TUI() {
-        StopTimer()
-        DestroyPushAlerts()
-        LoadTimerAttiributes()
-        UpdateSliderBar()
-        UpdateCountdownLabel()
-        
-        viewModel.timer = nil
-        playButton.isEnabled = true
-        playButton.isHidden = false
-        pauseButton.isHidden = true
-        stopButton.isHidden = true
+    func PlayButton() {
+        Play_TUI()
+    }
+    
+    func StopButton() {
+        Stop_TUI()
     }
 }
