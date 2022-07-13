@@ -21,8 +21,6 @@ final class UserDefaultsManager {
     private let ud = UserDefaults.standard
     
     func SetLastTickTime(egg: EggModel) {
-       
-        
         ud.set(true, forKey: UserDefaultsManagerConstants.keyForIsSet)
         ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
         ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)

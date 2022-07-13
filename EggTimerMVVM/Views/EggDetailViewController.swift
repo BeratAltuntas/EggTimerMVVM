@@ -75,7 +75,7 @@ final class EggDetailViewController: UIViewController {
     private func SetupSliderBar() {
         sliderCountdown = UISlider()
         sliderCountdown.tintColor = .eggButtonColor
-        sliderCountdown.maximumValue = selectedEgg.eggBoilingTotalSecond.toFloat()
+        sliderCountdown.maximumValue = (selectedEgg.eggBoilingMinute * 60).toFloat()
         sliderCountdown.minimumValue = .zero
         sliderCountdown.value = Float(selectedEgg.eggBoilingTotalSecond)
         sliderCountdown.translatesAutoresizingMaskIntoConstraints = false
@@ -240,8 +240,15 @@ final class EggDetailViewController: UIViewController {
         stopButton.isHidden = true
     }
     
-    @objc private func ApplicationResigned() {
-        viewModel.ApplicationResign()
+    @objc private func ApplicationDidEnterBackground() {
+        UserDefaultsManager.shared.RemoveAllItems()
+        viewModel.ApplicationDidEnterBackground()
+        Stop_TUI()
+    }
+    
+    @objc private func ApplicationComesBackFromBackground() {
+        viewModel.ApplicationComesBackFromBackground()
+        viewModel.CalculateTime()
     }
 }
 
@@ -259,7 +266,10 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
     }
     
     func LoadUI() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ApplicationResigned), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ApplicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ApplicationComesBackFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        
         view.backgroundColor = .white
         SetupEggTitleLabel()
         SetupImageView()
