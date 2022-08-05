@@ -22,6 +22,9 @@
 		F44CAB632877444B005C1376 /* EggDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB622877444B005C1376 /* EggDetailViewController.swift */; };
 		F44CAB6528774473005C1376 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6428774473005C1376 /* HomeViewModel.swift */; };
 		F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CAB6628774485005C1376 /* EggDetailViewModel.swift */; };
+		F45E4457289D543400570DA3 /* SoundPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45E4456289D543400570DA3 /* SoundPlayerManager.swift */; };
+		F45E445A289D564F00570DA3 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F45E4459289D564F00570DA3 /* alarm.mp3 */; };
+		F45E445C289D570A00570DA3 /* notification.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F45E445B289D570A00570DA3 /* notification.mp3 */; };
 		F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */; };
 		F48CF422287750B3001E7FD6 /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */; };
 		F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */; };
@@ -76,6 +79,9 @@
 		F44CAB622877444B005C1376 /* EggDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewController.swift; sourceTree = "<group>"; };
 		F44CAB6428774473005C1376 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F44CAB6628774485005C1376 /* EggDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDetailViewModel.swift; sourceTree = "<group>"; };
+		F45E4456289D543400570DA3 /* SoundPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerManager.swift; sourceTree = "<group>"; };
+		F45E4459289D564F00570DA3 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		F45E445B289D570A00570DA3 /* notification.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification.mp3; sourceTree = "<group>"; };
 		F48CF41F28774FE3001E7FD6 /* UIViewController+Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Hero.swift"; sourceTree = "<group>"; };
 		F48CF421287750B3001E7FD6 /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		F48CF42328775250001E7FD6 /* UIImage+CustomImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CustomImages.swift"; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 		F44CAB2A2877426D005C1376 /* EggTimerMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				F45E4458289D564400570DA3 /* Sounds */,
 				F48CF42728775616001E7FD6 /* Core */,
 				F44CAB5F28774340005C1376 /* Storyboards */,
 				F44CAB5E2877431B005C1376 /* Views */,
@@ -236,6 +243,15 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		F45E4458289D564400570DA3 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F45E4459289D564F00570DA3 /* alarm.mp3 */,
+				F45E445B289D570A00570DA3 /* notification.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F48CF41E28774FC3001E7FD6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				F48CF42E28777591001E7FD6 /* UserDefaultsManager.swift */,
+				F45E4456289D543400570DA3 /* SoundPlayerManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -386,7 +403,9 @@
 			files = (
 				F44CAB3828774272005C1376 /* LaunchScreen.storyboard in Resources */,
 				F44CAB3528774272005C1376 /* Assets.xcassets in Resources */,
+				F45E445A289D564F00570DA3 /* alarm.mp3 in Resources */,
 				F44CAB332877426D005C1376 /* Main.storyboard in Resources */,
+				F45E445C289D570A00570DA3 /* notification.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +540,7 @@
 				F48CF42F28777591001E7FD6 /* UserDefaultsManager.swift in Sources */,
 				F48CF42028774FE3001E7FD6 /* UIViewController+Hero.swift in Sources */,
 				F44CAB2E2877426D005C1376 /* SceneDelegate.swift in Sources */,
+				F45E4457289D543400570DA3 /* SoundPlayerManager.swift in Sources */,
 				F48CF42C28776F96001E7FD6 /* EggModel.swift in Sources */,
 				F44CAB6728774485005C1376 /* EggDetailViewModel.swift in Sources */,
 				F48CF42428775250001E7FD6 /* UIImage+CustomImages.swift in Sources */,

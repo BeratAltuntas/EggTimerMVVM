@@ -55,6 +55,7 @@ final class EggDetailViewModel {
         }
         
         if countdownTimerSecond <= 0 || countdownTimerMinute < 0 || countdownEggBoilingTotalSecond <= 0 {
+            SoundPlayerManager.shared.playSound(withSoundName: .alarm)
             delegate?.StopButton()
             delegate?.ShowAlertView()
         }
@@ -87,12 +88,14 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
     
     func ApplicationDidEnterBackground() {
         if timer != nil {
+            UserDefaultsManager.shared.RemoveAllItems()
             let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
             let eggModel = EggModel(eggName: (delegate?.selectedEggVM.eggName)!,
                                     eggImage: (delegate?.selectedEggVM.eggImageName)!,
                                     eggBoilingMinute: countdownTimerMinute,
-                                    eggBoilingTotalSecond: countdownEggBoilingTotalSecond,
+                                    eggBoilingTotalSecond: delegate.selectedEggVM.eggBoilingTotalSecond,
                                     eggBoilingSecond: countdownTimerSecond,
+                                    eggBoilingRemainingSecond: countdownEggBoilingTotalSecond,
                                     eggLastEnteredTime: time,
                                     eggIsSetBefore: true)
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
@@ -103,13 +106,18 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         if UserDefaultsManager.shared.EggIsSet(),
            let eggName = UserDefaultsManager.shared.GetLastEggName(),
            let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
-           let totalMin = UserDefaultsManager.shared.GetEggTotalMinute(),
+           let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
+           let remainingSec = UserDefaultsManager.shared.GetEggRemainingEggSecond(),
            let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
+            
+            let totalMin = totalSec % 60
+            
             var tempEgg = EggModel()
             tempEgg.eggName = eggName
             tempEgg.eggImageName = eggImageName
             tempEgg.eggBoilingMinute = totalMin
             tempEgg.eggLastEnteredTime = lastEnteredTime
+            tempEgg.eggBoilingRemainingSecond = remainingSec
             tempEgg.eggIsSetBefore = true
             
             delegate?.selectedEggVM = tempEgg
@@ -118,37 +126,38 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
     
     func CalculateTime() {
         guard let t = UserDefaultsManager.shared.GetLastEnteredTime() else { return }
-        guard let selectedEgg = delegate?.selectedEggVM else { return }
+        guard let USDremainingEggSec = UserDefaultsManager.shared.GetEggRemainingEggSecond() else { return }
+        guard let USDEggTotalSec = UserDefaultsManager.shared.GetEggTotalSecond() else { return }
+        
         let times = t.split(separator: ".")
         
         let sec = times[0]
         let min = times[1]
-        let hour = times[2]
         
-        let difHour = Date.now.getCurrentHour - Int(hour)!
-        let difMinute = Date.now.getCurrentMinute - Int(min)!
-        let difSecond = Date.now.getCurrentSecond - Int(sec)!
+        var difMinute = Date.now.getCurrentMinute < Int(min)! ? Int(min)! - Date.now.getCurrentMinute : Date.now.getCurrentMinute - Int(min)!
         
-        if difHour == 0 {
-            if difMinute < selectedEgg.eggBoilingMinute && difSecond != .zero {
-                delegate?.selectedEggVM.eggBoilingTotalSecond = (selectedEgg.eggBoilingMinute - difMinute) * 60
-                delegate?.selectedEggVM.eggBoilingMinute = selectedEgg.eggBoilingMinute - difMinute
-                if difSecond > 0 {
-                    delegate?.selectedEggVM.eggBoilingSecond = selectedEgg.eggBoilingSecond - difSecond
-                } else if difSecond < 0 {
-                    delegate?.selectedEggVM.eggBoilingSecond = difSecond
-                } else {
-                    delegate?.selectedEggVM.eggBoilingSecond = Int(sec)!
-                }
-                delegate?.PlayButton()
-            } else if difHour >= selectedEgg.eggBoilingMinute {
-                UserDefaultsManager.shared.RemoveAllItems()
-                delegate?.ShowAlertView()
-            }
+        var difSecond = 0
+        if Date.now.getCurrentSecond < Int(sec)! {
+            difSecond = (60 - Int(sec)!) + Date.now.getCurrentSecond
+            difMinute -= 1
         } else {
-            UserDefaultsManager.shared.RemoveAllItems()
-            delegate?.ShowAlertView()
+            difSecond = (Date.now.getCurrentSecond - Int(sec)!)
         }
         
+        let tempTotalSecond = USDremainingEggSec - difSecond - (60 * difMinute)
+        if (difMinute * 60 < USDEggTotalSec || difSecond != .zero ) && tempTotalSecond > 0 {
+            delegate?.selectedEggVM.eggBoilingTotalSecond = tempTotalSecond
+            delegate?.selectedEggVM.eggBoilingMinute =  (tempTotalSecond - (tempTotalSecond % 60)) / 60
+            
+            delegate?.selectedEggVM.eggBoilingSecond = (tempTotalSecond % 60)
+            
+            delegate?.PlayButton()
+        } else {
+            UserDefaultsManager.shared.RemoveAllItems()
+            SoundPlayerManager.shared.playAlarmSound()
+            delegate?.ShowAlertView()
+            delegate?.StopButton()
+        }
     }
 }
+

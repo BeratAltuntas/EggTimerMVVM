@@ -24,9 +24,18 @@ final class HomeViewController: UIViewController {
         let VM = HomeViewModel()
         viewModel = VM
         viewModel.SetupScreen()
-        
+        GetPermissionToSendNotification()
         if UserDefaultsManager.shared.EggIsSet() {
             PushView(withImageTag: 0)
+        }
+    }
+    
+    private func GetPermissionToSendNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.criticalAlert,.alert,.badge,.sound]) { granted, error in
+            if granted {
+                
+            }
         }
     }
     
@@ -99,12 +108,16 @@ final class HomeViewController: UIViewController {
             if UserDefaultsManager.shared.EggIsSet(),
                let eggName = UserDefaultsManager.shared.GetLastEggName(),
                let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
-               let totalMin = UserDefaultsManager.shared.GetEggTotalMinute(),
+               let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
+               let remainingSec = UserDefaultsManager.shared.GetEggRemainingEggSecond(),
                let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
+                
+                let totalmin = totalSec % 60
                 
                 tempEgg.eggName = eggName
                 tempEgg.eggImageName = eggImageName
-                tempEgg.eggBoilingMinute = totalMin
+                tempEgg.eggBoilingMinute = totalmin
+                tempEgg.eggBoilingRemainingSecond = remainingSec
                 tempEgg.eggLastEnteredTime = lastEnteredTime
                 tempEgg.eggIsSetBefore = true
             }

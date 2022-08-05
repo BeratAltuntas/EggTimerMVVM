@@ -32,6 +32,7 @@ final class EggDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewModel.SetupScreen()
     }
     
@@ -173,20 +174,6 @@ final class EggDetailViewController: UIViewController {
         lastButton = nil
     }
     
-    private func CreatePushAlert() {
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.sound = .defaultRingtone
-        notificationContent.title = "Egg Is Boiled."
-        notificationContent.body = "The egg is boiled. Take from the stove."
-        let whenIsTriggering = UNTimeIntervalNotificationTrigger(timeInterval: selectedEgg.eggBoilingTotalSecond.toDouble(), repeats: false)
-        let notification = UNNotificationRequest(identifier: ViewControllersConstants.eggPushNotificationIdentifier, content: notificationContent, trigger: whenIsTriggering)
-        UNUserNotificationCenter.current().add(notification)
-    }
-    
-    private func DestroyPushAlerts() {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-    }
-    
     private func LoadTimerAttiributes() {
         viewModel.LoadTimerAttiributes()
     }
@@ -243,7 +230,7 @@ final class EggDetailViewController: UIViewController {
     @objc private func ApplicationDidEnterBackground() {
         UserDefaultsManager.shared.RemoveAllItems()
         viewModel.ApplicationDidEnterBackground()
-        Stop_TUI()
+        viewModel.StopTimer()
     }
     
     @objc private func ApplicationComesBackFromBackground() {
@@ -335,5 +322,43 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
     
     func StopButton() {
         Stop_TUI()
+    }
+}
+
+extension EggDetailViewController: UNUserNotificationCenterDelegate {
+    private func GetPermissionToSendNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.criticalAlert,.alert,.badge,.sound]) { granted, error in
+        }
+    }
+    
+    private func CreatePushAlertCategories(){
+        let center = UNUserNotificationCenter.current()
+        center.delegate = self
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more...", options: .foreground)
+        let remindMeLater = UNNotificationAction(identifier: "remindeMeLater", title: "Remind Me Later", options: .foreground)
+        let category = UNNotificationCategory(identifier: "boiled", actions: [show,remindMeLater], intentIdentifiers: [])
+        
+        center.setNotificationCategories([category])
+    }
+    
+    private func CreatePushAlert() {
+        CreatePushAlertCategories()
+        let center = UNUserNotificationCenter.current()
+        
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "Egg Is Boiled."
+        notificationContent.body = "The egg is boiled. Take from the stove."
+        notificationContent.categoryIdentifier = "boiled"
+        notificationContent.sound = .default
+        
+        let whenIsTriggering = UNTimeIntervalNotificationTrigger(timeInterval: selectedEgg.eggBoilingTotalSecond.toDouble(), repeats: false)
+        let notification = UNNotificationRequest(identifier: ViewControllersConstants.eggPushNotificationIdentifier, content: notificationContent, trigger: whenIsTriggering)
+        center.add(notification)
+        
+    }
+    
+    private func DestroyPushAlerts() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }

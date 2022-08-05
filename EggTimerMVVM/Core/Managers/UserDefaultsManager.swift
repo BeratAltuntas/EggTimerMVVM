@@ -13,7 +13,8 @@ final class UserDefaultsManager {
         static let keyForIsSet = "EggIsSet"
         static let keyForEggName = "EggName"
         static let keyForEggImageName = "EggImageName"
-        static let keyForEggTotalMinute = "EggTotalMinute"
+        static let keyForEggTotalSecond = "EggTotalSecond"
+        static let keyForEggTotalRemainingSecond = "EggTotalRemainingSecond"
         static let keyForLastEnteredTime = "EggLastEnteredTime"
     }
     
@@ -24,7 +25,8 @@ final class UserDefaultsManager {
         ud.set(true, forKey: UserDefaultsManagerConstants.keyForIsSet)
         ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
         ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
-        ud.set(egg.eggBoilingMinute, forKey: UserDefaultsManagerConstants.keyForEggTotalMinute)
+        ud.set(egg.eggBoilingTotalSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
+        ud.set(egg.eggBoilingRemainingSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
         ud.set(egg.eggLastEnteredTime, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
     }
     
@@ -40,8 +42,12 @@ final class UserDefaultsManager {
         return ud.string(forKey: UserDefaultsManagerConstants.keyForEggImageName)
     }
     
-    func GetEggTotalMinute()-> Int? {
-        return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalMinute)
+    func GetEggTotalSecond()-> Int? {
+        return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
+    }
+    
+    func GetEggRemainingEggSecond()-> Int? {
+        return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
     }
     
     func GetLastEnteredTime()-> String? {
@@ -50,6 +56,8 @@ final class UserDefaultsManager {
     
     func RemoveAllItems() {
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggImageName)
+        ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
+        ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggName)
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForIsSet)
