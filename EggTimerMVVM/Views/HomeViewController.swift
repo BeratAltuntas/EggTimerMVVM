@@ -39,6 +39,10 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    private func SetupRightBarButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks , target: self, action: #selector(HowToBoilEggInfo))
+    }
+    
     private func SetupLabel() {
         labelTitle = UILabel()
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -94,41 +98,41 @@ final class HomeViewController: UIViewController {
     }
     
     private func PushView(withImageTag: Int) {
-        if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
-            let eggViewModel = EggDetailViewModel()
-            vc.viewModel = eggViewModel
+    if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
+        let eggViewModel = EggDetailViewModel()
+        vc.viewModel = eggViewModel
+        
+        var tempEgg = EggModel()
+        tempEgg.eggName = EggAttiributes.eggNames[withImageTag]
+        tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
+        tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
+        tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
+        tempEgg.eggBoilingRemainingSecond = .zero
+        
+        if UserDefaultsManager.shared.EggIsSet(),
+            let eggName = UserDefaultsManager.shared.GetLastEggName(),
+            let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
+            let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
+            let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
+            let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
             
-            var tempEgg = EggModel()
-            tempEgg.eggName = EggAttiributes.eggNames[withImageTag]
-            tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
-            tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
-            tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
-            tempEgg.eggBoilingRemainingSecond = .zero
+            let totalmin = totalSec % 60
             
-            if UserDefaultsManager.shared.EggIsSet(),
-               let eggName = UserDefaultsManager.shared.GetLastEggName(),
-               let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
-               let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
-               let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
-               let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
-                
-                let totalmin = totalSec % 60
-                
-                tempEgg.eggName = eggName
-                tempEgg.eggImageName = eggImageName
-                tempEgg.eggBoilingMinute = totalmin
-                tempEgg.eggBoilingTotalSecond = totalSec
-                tempEgg.eggBoilingTotalRemainingSecond = remainingSec
-                tempEgg.eggLastEnteredTime = lastEnteredTime
-                tempEgg.eggIsSetBefore = true
-            }
-            
-            vc.selectedEgg = tempEgg
-            showHero(vc,navigationAnimationType: .zoomOut)
+            tempEgg.eggName = eggName
+            tempEgg.eggImageName = eggImageName
+            tempEgg.eggBoilingMinute = totalmin
+            tempEgg.eggBoilingTotalSecond = totalSec
+            tempEgg.eggBoilingTotalRemainingSecond = remainingSec
+            tempEgg.eggLastEnteredTime = lastEnteredTime
+            tempEgg.eggIsSetBefore = true
         }
+        
+        vc.selectedEgg = tempEgg
+        showHero(vc,navigationAnimationType: .zoomOut)
     }
+}
     
-    @objc func ImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+    @objc private func ImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         switch tapGestureRecognizer.view?.tag {
         case 0:
             PushView(withImageTag: 0)
@@ -142,11 +146,18 @@ final class HomeViewController: UIViewController {
             break
         }
     }
+    
+    @objc private func HowToBoilEggInfo() {
+        let ac = UIAlertController(title: "How To Boil An Egg", message: "Place eggs in a medium pot and cover with cold water by 1 inch. Bring to a boil, then cover the pot and turn the heat off. Let the eggs cook, covered, for 6 to 12 minutes, depending on your desired done-ness (see photo).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(ac, animated: true)
+    }
 }
 
 // MARK: - Extension: HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
     func LoadUI() {
+        SetupRightBarButton()
         SetupLabel()
         SetupImageViewContainer()
     }
