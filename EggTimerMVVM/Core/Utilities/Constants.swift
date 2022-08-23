@@ -39,5 +39,5 @@ enum ViewControllersConstants {
 enum EggAttiributes {
     static let eggImageNames: [String] = ["egg-1", "egg-2", "egg-3", "egg-4"]
     static let eggNames: [String] = ["Soft", "Medium", "Hard", "Over"]
-    static let eggBoilMinutes: [Int] = [1, 7, 10, 12]
+    static let eggBoilMinutes: [Int] = [5, 6, 8, 10]
 }

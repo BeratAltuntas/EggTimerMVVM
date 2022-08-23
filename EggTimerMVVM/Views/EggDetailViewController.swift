@@ -76,7 +76,7 @@ final class EggDetailViewController: UIViewController {
     private func SetupSliderBar() {
         sliderCountdown = UISlider()
         sliderCountdown.tintColor = .eggButtonColor
-        sliderCountdown.maximumValue = (selectedEgg.eggBoilingMinute * 60).toFloat()
+        sliderCountdown.maximumValue = selectedEgg.eggBoilingTotalSecond.toFloat()
         sliderCountdown.minimumValue = .zero
         sliderCountdown.value = Float(selectedEgg.eggBoilingTotalSecond)
         sliderCountdown.translatesAutoresizingMaskIntoConstraints = false
@@ -179,7 +179,6 @@ final class EggDetailViewController: UIViewController {
     }
     
     private func SetupTimer() {
-        LoadTimerAttiributes()
         StartTimer()
     }
     
@@ -200,6 +199,7 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func Play_TUI() {
+        LoadTimerAttiributes()
         if viewModel.timer == nil {
             SetupTimer()
         } else {
@@ -228,7 +228,6 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func ApplicationDidEnterBackground() {
-        UserDefaultsManager.shared.RemoveAllItems()
         viewModel.ApplicationDidEnterBackground()
         viewModel.StopTimer()
     }
@@ -272,7 +271,7 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
     }
     
     func UpdateSliderBar() {
-        DispatchQueue.main.async {[weak self] in
+        DispatchQueue.main.async { [weak self] in
             self?.sliderCountdown.value = self!.viewModel.countdownEggBoilingTotalSecond.toFloat()
         }
     }

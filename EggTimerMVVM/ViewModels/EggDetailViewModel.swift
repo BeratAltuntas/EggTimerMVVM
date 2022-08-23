@@ -71,18 +71,19 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
     }
     
     func StartTimer() {
-        if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: 1.toDouble(), target: self, selector: #selector(TimerTick), userInfo: nil, repeats: true)
-        }
+        timer = Timer.scheduledTimer(timeInterval: 1.toDouble(), target: self, selector: #selector(TimerTick), userInfo: nil, repeats: true)
     }
     
     func StopTimer() {
-        timer!.invalidate()
+        if let timer = timer {
+            timer.invalidate()
+        }
+        
     }
     
     func LoadTimerAttiributes() {
         countdownEggBoilingTotalSecond = (delegate?.selectedEggVM.eggBoilingTotalSecond)!
-        countdownTimerSecond = (delegate?.selectedEggVM.eggBoilingSecond)!
+        countdownTimerSecond = (delegate?.selectedEggVM.eggBoilingRemainingSecond)!
         countdownTimerMinute = (delegate?.selectedEggVM.eggBoilingMinute)!
     }
     
@@ -90,12 +91,13 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         if timer != nil {
             UserDefaultsManager.shared.RemoveAllItems()
             let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
+            
             let eggModel = EggModel(eggName: (delegate?.selectedEggVM.eggName)!,
                                     eggImage: (delegate?.selectedEggVM.eggImageName)!,
                                     eggBoilingMinute: countdownTimerMinute,
                                     eggBoilingTotalSecond: delegate.selectedEggVM.eggBoilingTotalSecond,
-                                    eggBoilingSecond: countdownTimerSecond,
-                                    eggBoilingRemainingSecond: countdownEggBoilingTotalSecond,
+                                    eggBoilingRemainingSecond: countdownTimerSecond,
+                                    eggBoilingTotalRemainingSecond: countdownEggBoilingTotalSecond,
                                     eggLastEnteredTime: time,
                                     eggIsSetBefore: true)
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
@@ -107,7 +109,7 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
            let eggName = UserDefaultsManager.shared.GetLastEggName(),
            let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
            let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
-           let remainingSec = UserDefaultsManager.shared.GetEggRemainingEggSecond(),
+           let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
            let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
             
             let totalMin = totalSec % 60
@@ -117,7 +119,8 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
             tempEgg.eggImageName = eggImageName
             tempEgg.eggBoilingMinute = totalMin
             tempEgg.eggLastEnteredTime = lastEnteredTime
-            tempEgg.eggBoilingRemainingSecond = remainingSec
+            tempEgg.eggBoilingTotalSecond = totalSec
+            tempEgg.eggBoilingTotalRemainingSecond = remainingSec
             tempEgg.eggIsSetBefore = true
             
             delegate?.selectedEggVM = tempEgg
@@ -126,7 +129,7 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
     
     func CalculateTime() {
         guard let t = UserDefaultsManager.shared.GetLastEnteredTime() else { return }
-        guard let USDremainingEggSec = UserDefaultsManager.shared.GetEggRemainingEggSecond() else { return }
+        guard let USDremainingEggSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond() else { return }
         guard let USDEggTotalSec = UserDefaultsManager.shared.GetEggTotalSecond() else { return }
         
         let times = t.split(separator: ".")
@@ -149,7 +152,7 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
             delegate?.selectedEggVM.eggBoilingTotalSecond = tempTotalSecond
             delegate?.selectedEggVM.eggBoilingMinute =  (tempTotalSecond - (tempTotalSecond % 60)) / 60
             
-            delegate?.selectedEggVM.eggBoilingSecond = (tempTotalSecond % 60)
+            delegate?.selectedEggVM.eggBoilingRemainingSecond = (tempTotalSecond % 60)
             
             delegate?.PlayButton()
         } else {

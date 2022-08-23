@@ -103,13 +103,13 @@ final class HomeViewController: UIViewController {
             tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
             tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
             tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
-            tempEgg.eggBoilingSecond = .zero
+            tempEgg.eggBoilingRemainingSecond = .zero
             
             if UserDefaultsManager.shared.EggIsSet(),
                let eggName = UserDefaultsManager.shared.GetLastEggName(),
                let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
                let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
-               let remainingSec = UserDefaultsManager.shared.GetEggRemainingEggSecond(),
+               let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
                let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
                 
                 let totalmin = totalSec % 60
@@ -117,7 +117,8 @@ final class HomeViewController: UIViewController {
                 tempEgg.eggName = eggName
                 tempEgg.eggImageName = eggImageName
                 tempEgg.eggBoilingMinute = totalmin
-                tempEgg.eggBoilingRemainingSecond = remainingSec
+                tempEgg.eggBoilingTotalSecond = totalSec
+                tempEgg.eggBoilingTotalRemainingSecond = remainingSec
                 tempEgg.eggLastEnteredTime = lastEnteredTime
                 tempEgg.eggIsSetBefore = true
             }

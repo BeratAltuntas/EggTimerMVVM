@@ -14,8 +14,8 @@ struct EggModel {
     var eggImageName: String
     var eggBoilingMinute: Int
     var eggBoilingTotalSecond: Int
+    var eggBoilingTotalRemainingSecond: Int
     var eggBoilingRemainingSecond: Int
-    var eggBoilingSecond: Int
     var eggLastEnteredTime: String
     var eggIsSetBefore: Bool
     
@@ -24,8 +24,8 @@ struct EggModel {
         eggImageName = ""
         eggBoilingTotalSecond = 0
         eggBoilingMinute = 0
+        eggBoilingTotalRemainingSecond = 0
         eggBoilingRemainingSecond = 0
-        eggBoilingSecond = 0
         eggLastEnteredTime = ""
         eggIsSetBefore = false
     }
@@ -34,8 +34,8 @@ struct EggModel {
          eggImage: String,
          eggBoilingMinute: Int,
          eggBoilingTotalSecond: Int,
-         eggBoilingSecond: Int,
          eggBoilingRemainingSecond: Int,
+         eggBoilingTotalRemainingSecond: Int,
          eggLastEnteredTime: String,
          eggIsSetBefore: Bool) {
         
@@ -43,8 +43,8 @@ struct EggModel {
         self.eggImageName = eggImage
         self.eggBoilingMinute = eggBoilingMinute
         self.eggBoilingTotalSecond = eggBoilingTotalSecond
+        self.eggBoilingTotalRemainingSecond = eggBoilingTotalRemainingSecond
         self.eggBoilingRemainingSecond = eggBoilingRemainingSecond
-        self.eggBoilingSecond = eggBoilingSecond
         self.eggLastEnteredTime = eggLastEnteredTime
         self.eggIsSetBefore = eggIsSetBefore
     }

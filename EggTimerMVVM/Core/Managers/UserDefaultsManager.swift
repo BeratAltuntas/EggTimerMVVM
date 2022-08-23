@@ -26,7 +26,7 @@ final class UserDefaultsManager {
         ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
         ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
         ud.set(egg.eggBoilingTotalSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
-        ud.set(egg.eggBoilingRemainingSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
+        ud.set(egg.eggBoilingTotalRemainingSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
         ud.set(egg.eggLastEnteredTime, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
     }
     
@@ -46,7 +46,7 @@ final class UserDefaultsManager {
         return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
     }
     
-    func GetEggRemainingEggSecond()-> Int? {
+    func GetEggTotalRemainingSecond()-> Int? {
         return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
     }
     
