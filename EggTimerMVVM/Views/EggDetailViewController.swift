@@ -38,10 +38,10 @@ final class EggDetailViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UserDefaultsManager.shared.RemoveAllItems()
-        if viewModel.timer != nil {
-            Stop_TUI()
+        if self.isBeingDismissed || self.isMovingFromParent{
+            UserDefaultsManager.shared.RemoveAllItems()
         }
+        Stop_TUI()
     }
     
     private func SetupEggTitleLabel() {

@@ -13,6 +13,7 @@ final class UserDefaultsManager {
         static let keyForIsSet = "EggIsSet"
         static let keyForEggName = "EggName"
         static let keyForEggImageName = "EggImageName"
+        static let keyForEggImageTagNumber = "EggImageTagNumber"
         static let keyForEggTotalSecond = "EggTotalSecond"
         static let keyForEggTotalRemainingSecond = "EggTotalRemainingSecond"
         static let keyForLastEnteredTime = "EggLastEnteredTime"
@@ -28,6 +29,7 @@ final class UserDefaultsManager {
         ud.set(egg.eggBoilingTotalSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
         ud.set(egg.eggBoilingTotalRemainingSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
         ud.set(egg.eggLastEnteredTime, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
+        ud.set(egg.eggImageTag, forKey: UserDefaultsManagerConstants.keyForEggImageTagNumber)
     }
     
     func EggIsSet()->Bool {
@@ -40,6 +42,10 @@ final class UserDefaultsManager {
     
     func GetLastEggImageName()-> String? {
         return ud.string(forKey: UserDefaultsManagerConstants.keyForEggImageName)
+    }
+    
+    func GetLastEggImageTagNumber()-> Int {
+        return ud.integer(forKey: UserDefaultsManagerConstants.keyForEggImageTagNumber)
     }
     
     func GetEggTotalSecond()-> Int? {
@@ -61,5 +67,6 @@ final class UserDefaultsManager {
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggName)
         ud.removeObject(forKey: UserDefaultsManagerConstants.keyForIsSet)
+        ud.removeObject(forKey: UserDefaultsManagerConstants.keyForEggImageTagNumber)
     }
 }

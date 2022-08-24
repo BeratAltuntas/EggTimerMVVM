@@ -78,7 +78,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         if let timer = timer {
             timer.invalidate()
         }
-        
     }
     
     func LoadTimerAttiributes() {
@@ -99,7 +98,9 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
                                     eggBoilingRemainingSecond: countdownTimerSecond,
                                     eggBoilingTotalRemainingSecond: countdownEggBoilingTotalSecond,
                                     eggLastEnteredTime: time,
-                                    eggIsSetBefore: true)
+                                    eggIsSetBefore: true,
+                                    eggImageTag: (delegate?.selectedEggVM.eggImageTag)!)
+            print(delegate.selectedEggVM.eggImageTag)
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
         }
     }

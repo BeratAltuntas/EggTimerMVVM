@@ -9,8 +9,7 @@ import UIKit
 
 // MARK: - HomeViewController
 final class HomeViewController: UIViewController {
-    
-    weak var viewModel: HomeViewModel! {
+    var viewModel: HomeViewModel! {
         didSet {
             viewModel.delegate = self
         }
@@ -21,26 +20,33 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let VM = HomeViewModel()
-        viewModel = VM
+        viewModel = HomeViewModel()
         viewModel.SetupScreen()
         GetPermissionToSendNotification()
-        if UserDefaultsManager.shared.EggIsSet() {
-            PushView(withImageTag: 0)
+        if UserDefaultsManager.shared.EggIsSet()
+            {
+            let imageTag = UserDefaultsManager.shared.GetLastEggImageTagNumber()
+            PushView(withImageTag: imageTag)// number is undynamic
         }
     }
     
     private func GetPermissionToSendNotification() {
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.criticalAlert,.alert,.badge,.sound]) { granted, error in
-            if granted {
-                
+        center.requestAuthorization(options: [.criticalAlert,.alert,.badge,.sound]) { [weak self] granted, error in
+            if !granted {
+                let ac = UIAlertController(title: "Notification Error.", message: "If you are not allow to application notifications you will never get notified.", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self] action in
+                    self?.GetPermissionToSendNotification()
+                }))
+                ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+                self?.present(ac, animated: true)
             }
         }
     }
     
     private func SetupRightBarButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks , target: self, action: #selector(HowToBoilEggInfo))
+        navigationItem.rightBarButtonItem?.tintColor = .eggButtonColor
     }
     
     private func SetupLabel() {
@@ -98,39 +104,39 @@ final class HomeViewController: UIViewController {
     }
     
     private func PushView(withImageTag: Int) {
-    if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
-        let eggViewModel = EggDetailViewModel()
-        vc.viewModel = eggViewModel
-        
-        var tempEgg = EggModel()
-        tempEgg.eggName = EggAttiributes.eggNames[withImageTag]
-        tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
-        tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
-        tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
-        tempEgg.eggBoilingRemainingSecond = .zero
-        
-        if UserDefaultsManager.shared.EggIsSet(),
-            let eggName = UserDefaultsManager.shared.GetLastEggName(),
-            let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
-            let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
-            let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
-            let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: ViewControllersConstants.eggDetailPageIdentifier) as? EggDetailViewController {
+            vc.viewModel = EggDetailViewModel()
             
-            let totalmin = totalSec % 60
+            var tempEgg = EggModel()
+            tempEgg.eggName = EggAttiributes.eggNames[withImageTag]
+            tempEgg.eggImageName = EggAttiributes.eggImageNames[withImageTag]
+            tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
+            tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
+            tempEgg.eggBoilingRemainingSecond = .zero
             
-            tempEgg.eggName = eggName
-            tempEgg.eggImageName = eggImageName
-            tempEgg.eggBoilingMinute = totalmin
-            tempEgg.eggBoilingTotalSecond = totalSec
-            tempEgg.eggBoilingTotalRemainingSecond = remainingSec
-            tempEgg.eggLastEnteredTime = lastEnteredTime
-            tempEgg.eggIsSetBefore = true
+            if UserDefaultsManager.shared.EggIsSet(),
+               let eggName = UserDefaultsManager.shared.GetLastEggName(),
+               let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
+               let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
+               let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
+               let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
+                
+                let totalmin = totalSec % 60
+                
+                tempEgg.eggName = eggName
+                tempEgg.eggImageName = eggImageName
+                tempEgg.eggBoilingMinute = totalmin
+                tempEgg.eggBoilingTotalSecond = totalSec
+                tempEgg.eggBoilingTotalRemainingSecond = remainingSec
+                tempEgg.eggLastEnteredTime = lastEnteredTime
+                tempEgg.eggIsSetBefore = true
+            }
+            tempEgg.eggImageTag = withImageTag
+            print(withImageTag)
+            vc.selectedEgg = tempEgg
+            showHero(vc,navigationAnimationType: .zoomOut)
         }
-        
-        vc.selectedEgg = tempEgg
-        showHero(vc,navigationAnimationType: .zoomOut)
     }
-}
     
     @objc private func ImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         switch tapGestureRecognizer.view?.tag {
