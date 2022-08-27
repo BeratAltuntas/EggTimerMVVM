@@ -24,8 +24,7 @@ final class HomeViewController: UIViewController {
         viewModel.SetupScreen()
         GetPermissionToSendNotification()
         if UserDefaultsManager.shared.EggIsSet(),
-            let imageTag = UserDefaultsManager.shared.GetLastEggImageTagNumber() {
-            
+           let imageTag = UserDefaultsManager.shared.GetLastEggImageTagNumber() {
             PushView(withImageTag: imageTag)
         }
     }
@@ -113,7 +112,7 @@ final class HomeViewController: UIViewController {
             tempEgg.eggBoilingMinute = EggAttiributes.eggBoilMinutes[withImageTag]
             tempEgg.eggBoilingTotalSecond = EggAttiributes.eggBoilMinutes[withImageTag] * .secondInOneMinute
             tempEgg.eggBoilingRemainingSecond = .zero
-            
+            tempEgg.eggImageTag = withImageTag
             if UserDefaultsManager.shared.EggIsSet(),
                let eggName = UserDefaultsManager.shared.GetLastEggName(),
                let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
@@ -133,7 +132,7 @@ final class HomeViewController: UIViewController {
                 tempEgg.eggImageTag = imageTag
                 tempEgg.eggIsSetBefore = true
             }
-            tempEgg.eggImageTag = withImageTag
+            
             vc.selectedEgg = tempEgg
             showHero(vc,navigationAnimationType: .zoomOut)
         }

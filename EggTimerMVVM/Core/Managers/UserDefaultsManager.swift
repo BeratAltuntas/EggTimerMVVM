@@ -23,16 +23,14 @@ final class UserDefaultsManager {
     private let ud = UserDefaults.standard
     
     func SetLastTickTime(egg: EggModel) {
-        print(egg.eggBoilingTotalSecond)
-        print(egg.eggBoilingTotalRemainingSecond)
         
         ud.set(true, forKey: UserDefaultsManagerConstants.keyForIsSet)
-        ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
-        ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
+        ud.set(egg.eggImageTag, forKey: UserDefaultsManagerConstants.keyForEggImageTagNumber)
         ud.set(egg.eggBoilingTotalSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalSecond)
         ud.set(egg.eggBoilingTotalRemainingSecond, forKey: UserDefaultsManagerConstants.keyForEggTotalRemainingSecond)
         ud.set(egg.eggLastEnteredTime, forKey: UserDefaultsManagerConstants.keyForLastEnteredTime)
-        ud.set(egg.eggImageTag, forKey: UserDefaultsManagerConstants.keyForEggImageTagNumber)
+        ud.set(egg.eggImageName, forKey: UserDefaultsManagerConstants.keyForEggImageName)
+        ud.set(egg.eggName, forKey: UserDefaultsManagerConstants.keyForEggName)
     }
     
     func EggIsSet()->Bool {

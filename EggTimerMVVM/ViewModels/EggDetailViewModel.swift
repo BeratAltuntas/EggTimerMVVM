@@ -10,7 +10,7 @@ import Foundation
 // MARK: - EggDetailViewModelProtocol
 protocol EggDetailViewModelProtocol {
     var delegate: EggDetailViewModelDelegate! { get set }
-    var timer: Timer! { get }
+    var timer: Timer! { get set }
     var countdownEggBoilingTotalSecond: Int { get }
     var countdownTimerSecond: Int { get }
     var countdownTimerMinute: Int { get }
@@ -75,9 +75,9 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
     }
     
     func StopTimer() {
-        if let timer = timer {
-            timer.invalidate()
-        }
+        guard timer != nil else { return }
+        self.timer.invalidate()
+        self.timer = nil
     }
     
     func LoadTimerAttiributes() {
@@ -90,7 +90,7 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         if timer != nil {
             UserDefaultsManager.shared.RemoveAllItems()
             let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
-            
+            print(time)
             let eggModel = EggModel(eggName: (delegate?.selectedEggVM.eggName)!,
                                     eggImage: (delegate?.selectedEggVM.eggImageName)!,
                                     eggBoilingMinute: countdownTimerMinute,
@@ -100,7 +100,10 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
                                     eggLastEnteredTime: time,
                                     eggIsSetBefore: true,
                                     eggImageTag: (delegate?.selectedEggVM.eggImageTag)!)
+            
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
+            timer.invalidate()
+            timer = nil
         }
     }
     
@@ -122,7 +125,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
             tempEgg.eggBoilingTotalSecond = totalSec
             tempEgg.eggBoilingTotalRemainingSecond = remainingSec
             tempEgg.eggIsSetBefore = true
-            
             delegate?.selectedEggVM = tempEgg
         }
     }
@@ -131,6 +133,8 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         guard let t = UserDefaultsManager.shared.GetLastEnteredTime() else { return }
         guard let USDremainingEggSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond() else { return }
         guard let USDEggTotalSec = UserDefaultsManager.shared.GetEggTotalSecond() else { return }
+        let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
+        print(time)
         
         let times = t.split(separator: ".")
         
@@ -149,11 +153,11 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         
         let tempTotalSecond = USDremainingEggSec - difSecond - (60 * difMinute)
         if (difMinute * 60 < USDEggTotalSec || difSecond != .zero ) && tempTotalSecond > 0 {
+            
             delegate?.selectedEggVM.eggBoilingTotalRemainingSecond = tempTotalSecond
             delegate?.selectedEggVM.eggBoilingMinute =  (tempTotalSecond - (tempTotalSecond % 60)) / 60
-            
             delegate?.selectedEggVM.eggBoilingRemainingSecond = (tempTotalSecond % 60)
-            
+            LoadTimerAttiributes()
             delegate?.PlayButton()
         } else {
             UserDefaultsManager.shared.RemoveAllItems()

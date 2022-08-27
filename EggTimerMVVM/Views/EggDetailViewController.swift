@@ -32,13 +32,12 @@ final class EggDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel.SetupScreen()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if self.isBeingDismissed || self.isMovingFromParent{
+        if self.isMovingFromParent {
             UserDefaultsManager.shared.RemoveAllItems()
         }
         Stop_TUI()
@@ -189,6 +188,7 @@ final class EggDetailViewController: UIViewController {
     private func StopTimer() {
         labelColonsShow = true
         viewModel.StopTimer()
+        UserDefaultsManager.shared.RemoveAllItems()
     }
     
     @objc private func Pause_TUI() {
@@ -199,7 +199,6 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func Play_TUI() {
-        LoadTimerAttiributes()
         if viewModel.timer == nil {
             SetupTimer()
         } else {
@@ -213,7 +212,7 @@ final class EggDetailViewController: UIViewController {
         CreatePushAlert()
     }
     
-    @objc func Stop_TUI() {
+    @objc private func Stop_TUI() {
         selectedEggVM.eggBoilingMinute = selectedEgg.eggBoilingTotalSecond / .secondInOneMinute
         selectedEggVM.eggBoilingRemainingSecond = 0
         StopTimer()
@@ -235,8 +234,9 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func ApplicationComesBackFromBackground() {
-        viewModel.ApplicationComesBackFromBackground()
+   //     viewModel.ApplicationComesBackFromBackground()
         viewModel.CalculateTime()
+        UserDefaultsManager.shared.RemoveAllItems()
     }
 }
 
@@ -254,7 +254,7 @@ extension EggDetailViewController: EggDetailViewModelDelegate {
     }
     
     func LoadUI() {
-        NotificationCenter.default.addObserver(self, selector: #selector(ApplicationDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ApplicationDidEnterBackground), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationComesBackFromBackground), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         
