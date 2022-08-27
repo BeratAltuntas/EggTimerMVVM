@@ -214,6 +214,8 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc func Stop_TUI() {
+        selectedEggVM.eggBoilingMinute = selectedEgg.eggBoilingTotalSecond / .secondInOneMinute
+        selectedEggVM.eggBoilingRemainingSecond = 0
         StopTimer()
         DestroyPushAlerts()
         LoadTimerAttiributes()

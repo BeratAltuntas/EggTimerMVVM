@@ -100,7 +100,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
                                     eggLastEnteredTime: time,
                                     eggIsSetBefore: true,
                                     eggImageTag: (delegate?.selectedEggVM.eggImageTag)!)
-            print(delegate.selectedEggVM.eggImageTag)
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
         }
     }
@@ -138,19 +137,19 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         let sec = times[0]
         let min = times[1]
         
-        var difMinute = Date.now.getCurrentMinute < Int(min)! ? Int(min)! - Date.now.getCurrentMinute : Date.now.getCurrentMinute - Int(min)!
+        var difMinute = Date.now.getCurrentMinute < Int(min)! ? 60 - Int(min)! + Date.now.getCurrentMinute : Date.now.getCurrentMinute - Int(min)!
         
         var difSecond = 0
         if Date.now.getCurrentSecond < Int(sec)! {
             difSecond = (60 - Int(sec)!) + Date.now.getCurrentSecond
-            difMinute -= 1
+            difMinute += 1
         } else {
             difSecond = (Date.now.getCurrentSecond - Int(sec)!)
         }
         
         let tempTotalSecond = USDremainingEggSec - difSecond - (60 * difMinute)
         if (difMinute * 60 < USDEggTotalSec || difSecond != .zero ) && tempTotalSecond > 0 {
-            delegate?.selectedEggVM.eggBoilingTotalSecond = tempTotalSecond
+            delegate?.selectedEggVM.eggBoilingTotalRemainingSecond = tempTotalSecond
             delegate?.selectedEggVM.eggBoilingMinute =  (tempTotalSecond - (tempTotalSecond % 60)) / 60
             
             delegate?.selectedEggVM.eggBoilingRemainingSecond = (tempTotalSecond % 60)
