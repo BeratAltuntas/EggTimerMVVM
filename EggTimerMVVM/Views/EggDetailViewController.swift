@@ -234,6 +234,8 @@ final class EggDetailViewController: UIViewController {
     }
     
     @objc private func ApplicationComesBackFromBackground() {
+        // viewModel.ApplicationComesBackFromBackground()
+        LoadTimerAttiributes()
         viewModel.CalculateTime()
         UserDefaultsManager.shared.RemoveAllItems()
     }

@@ -38,7 +38,7 @@ final class UserDefaultsManager {
     }
     
     func GetLastEggName()-> String? {
-        return ud.string(forKey: UserDefaultsManagerConstants.keyForEggName) ?? nil
+        return ud.string(forKey: UserDefaultsManagerConstants.keyForEggName)
     }
     
     func GetLastEggImageName()-> String? {
