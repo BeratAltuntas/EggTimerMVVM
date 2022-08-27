@@ -21,7 +21,6 @@ protocol EggDetailViewModelProtocol {
     func LoadTimerAttiributes()
     func CalculateTime()
     func ApplicationDidEnterBackground()
-    func ApplicationComesBackFromBackground()
 }
 
 // MARK: - EggDetailViewModelDelegate
@@ -104,28 +103,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
             UserDefaultsManager.shared.SetLastTickTime(egg: eggModel)
             timer.invalidate()
             timer = nil
-        }
-    }
-    
-    func ApplicationComesBackFromBackground() {
-        if UserDefaultsManager.shared.EggIsSet(),
-           let eggName = UserDefaultsManager.shared.GetLastEggName(),
-           let eggImageName = UserDefaultsManager.shared.GetLastEggImageName(),
-           let totalSec = UserDefaultsManager.shared.GetEggTotalSecond(),
-           let remainingSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond(),
-           let lastEnteredTime = UserDefaultsManager.shared.GetLastEnteredTime() {
-            
-            let totalMin = totalSec % 60
-            
-            var tempEgg = EggModel()
-            tempEgg.eggName = eggName
-            tempEgg.eggImageName = eggImageName
-            tempEgg.eggBoilingMinute = totalMin
-            tempEgg.eggLastEnteredTime = lastEnteredTime
-            tempEgg.eggBoilingTotalSecond = totalSec
-            tempEgg.eggBoilingTotalRemainingSecond = remainingSec
-            tempEgg.eggIsSetBefore = true
-            delegate?.selectedEggVM = tempEgg
         }
     }
     
