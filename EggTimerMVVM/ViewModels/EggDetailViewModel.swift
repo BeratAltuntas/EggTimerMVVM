@@ -89,7 +89,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         if timer != nil {
             UserDefaultsManager.shared.RemoveAllItems()
             let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
-            print(time)
             let eggModel = EggModel(eggName: (delegate?.selectedEggVM.eggName)!,
                                     eggImage: (delegate?.selectedEggVM.eggImageName)!,
                                     eggBoilingMinute: countdownTimerMinute,
@@ -110,8 +109,6 @@ extension EggDetailViewModel: EggDetailViewModelProtocol {
         guard let t = UserDefaultsManager.shared.GetLastEnteredTime() else { return }
         guard let USDremainingEggSec = UserDefaultsManager.shared.GetEggTotalRemainingSecond() else { return }
         guard let USDEggTotalSec = UserDefaultsManager.shared.GetEggTotalSecond() else { return }
-        let time = "\(Date.now.getCurrentSecond).\(Date.now.getCurrentMinute).\(Date.now.getCurrentHour)"
-        print(time)
         
         let times = t.split(separator: ".")
         
